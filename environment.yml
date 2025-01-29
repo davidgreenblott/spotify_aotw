@@ -1,0 +1,10 @@
+name: spotify-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10  # Specify your desired Python version
+  - sqlalchemy
+  - psycopg2
+  - pip
+  - pip:
+      - spotipy
