@@ -60,9 +60,9 @@ def main():
     auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    # import masater list
+    # import master list
     master_list_fname = 'aotw_master_list.xlsx'
-    df = pd.read_excel(master_list_fname)
+    df = pd.read_excel(master_list_fname, index_col = 0)
 
     #get new album info and append
     next_album_info = get_album_info(url = url, spot_api = sp)
