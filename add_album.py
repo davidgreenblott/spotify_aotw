@@ -44,11 +44,7 @@ def get_album_info(url = '', spot_api = None):
 
     return to_return
 
-def main():
-
-    # get user args
-    args = get_user_args()
-    url = args.url
+def add_album(url = ''):
 
     # Setup spotify credentials
     with open('spotify_credentials.json', 'r') as cred_file:
@@ -68,7 +64,13 @@ def main():
     next_album_info = get_album_info(url = url, spot_api = sp)
     df = pd.concat([df, pd.DataFrame([next_album_info])], ignore_index = True)
     df.to_excel('aotw_master_list.xlsx')
-    
+
+def main():
+
+    # get user args
+    args = get_user_args()
+    url = args.url
+    add_album(url = url)
 
 if __name__ == "__main__":
     main()
