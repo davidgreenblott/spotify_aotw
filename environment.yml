@@ -2,9 +2,11 @@ name: spotify-env
 channels:
   - conda-forge
 dependencies:
-  - python=3.10  # Specify your desired Python version
+  - python=3.10
+  - pandas
   - sqlalchemy
   - psycopg2
+  - pyqt=5
   - pip
   - pip:
       - spotipy
