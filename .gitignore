@@ -1,0 +1,12 @@
+# Original extraction files
+extract_albums_from_playlist/
+
+# Master List
+aotw_master_list.xlsx
+
+# Spotify API Credentials
+spotify_credentials.json
+
+# Misc
+.cache
+__pycache__/
