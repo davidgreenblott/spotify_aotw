@@ -34,8 +34,13 @@ class AlbumWindow(QWidget):
         album_url = self.url_input.text()
         
         if album_url:
-            add_album(url=album_url)
-            self.label.setText("Album added successfully!")
+            album_added = add_album(url = album_url)
+
+            if album_added:
+                self.label.setText("Album added successfully!")
+
+            else:
+                self.label.setText("Invalid album url")
             QTimer.singleShot(3000, lambda: self.label.setText("Enter your album URL here:"))
             QTimer.singleShot(3000, lambda: self.url_input.clear())
         else:
