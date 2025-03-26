@@ -1,5 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.exceptions import SpotifyException
 import pandas as pd
 import json
 import argparse
@@ -17,11 +18,19 @@ def get_user_args():
                         required=True)
     return parser.parse_args()
 
-
 # use spotify api to extract album info from given url
 def get_album_info(url = '', spot_api = None):
     
-    raw_info = spot_api.album(url)
+    try:
+
+        raw_info = spot_api.album(url)
+
+    except SpotifyException as e:
+
+        if e.http_status == 400:
+            print('exception')
+            return None
+
 
     artist = raw_info['artists'][0]['name']
     album = raw_info['name']
@@ -44,9 +53,8 @@ def get_album_info(url = '', spot_api = None):
 
     return to_return
 
-def add_album(url = ''):
+def get_spotify_api():
 
-    # Setup spotify credentials
     with open('spotify_credentials.json', 'r') as cred_file:
         creds = json.load(cred_file)
 
@@ -56,18 +64,27 @@ def add_album(url = ''):
     auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    # import master list
-    master_list_fname = 'aotw_master_list.xlsx'
+    return sp
+
+def add_album(url = '', master_list_fname = 'aotw_master_list.xlsx'):
+
+    sp = get_spotify_api()
+
     df = pd.read_excel(master_list_fname, index_col = 0)
 
     #get new album info and append
     next_album_info = get_album_info(url = url, spot_api = sp)
+
+    if next_album_info is None:
+        
+        return False
     df = pd.concat([df, pd.DataFrame([next_album_info])], ignore_index = True)
-    df.to_excel('aotw_master_list.xlsx')
+    df.to_excel(master_list_fname)
+
+    return True
 
 def main():
 
-    # get user args
     args = get_user_args()
     url = args.url
     add_album(url = url)
