@@ -5,6 +5,7 @@ import pandas as pd
 import json
 import argparse
 from datetime import datetime
+import os
 
 
 def get_user_args():
@@ -55,7 +56,11 @@ def get_album_info(url = '', spot_api = None):
 
 def get_spotify_api():
 
-    with open('spotify_credentials.json', 'r') as cred_file:
+    credentials_file = "spotify_credentials.json"
+    base_dir = os.path.dirname(os.path.abspath(credentials_file))
+    cred_path = os.path.join(base_dir, '..', 'spotify_credentials.json')
+
+    with open(cred_path, 'r') as cred_file:
         creds = json.load(cred_file)
 
     CLIENT_ID = creds.get('CLIENT_ID')
@@ -70,7 +75,9 @@ def add_album(url = '', master_list_fname = 'aotw_master_list.xlsx'):
 
     sp = get_spotify_api()
 
-    df = pd.read_excel(master_list_fname, index_col = 0)
+    base_dir = os.path.dirname(os.path.abspath(master_list_fname))
+    master_list_path = os.path.join(base_dir, '..', master_list_fname)
+    df = pd.read_excel(master_list_path, index_col = 0)
 
     #get new album info and append
     next_album_info = get_album_info(url = url, spot_api = sp)
@@ -79,7 +86,7 @@ def add_album(url = '', master_list_fname = 'aotw_master_list.xlsx'):
         
         return False
     df = pd.concat([df, pd.DataFrame([next_album_info])], ignore_index = True)
-    df.to_excel(master_list_fname)
+    df.to_excel(master_list_path)
 
     return True
 
