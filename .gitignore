@@ -6,7 +6,10 @@ aotw_master_list.xlsx
 
 # Spotify API Credentials
 spotify_credentials.json
+*service_account*.json
+aotw-488201-8465cf54c9d9.json
 
 # Misc
 .cache
 __pycache__/
+.DS_Store
