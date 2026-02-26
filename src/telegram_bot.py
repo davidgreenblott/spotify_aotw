@@ -44,8 +44,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     try:
         from pipeline import process_album
-        result = await process_album(url)
-        await update.message.reply_text(result['message'])
+        result = await process_album(
+            url,
+            sheet_id=os.getenv('GOOGLE_SHEET_ID'),
+            sheet_tab=os.getenv('GOOGLE_SHEET_TAB'),
+            creds_path=os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON'),
+        )
+        await update.message.reply_text(result['message'], parse_mode='Markdown')
+
+        if result['success']:
+            logger.info('Pipeline succeeded for %s: %s', username, result.get('data', {}).get('Album'))
+        else:
+            logger.warning('Pipeline rejected %s: %s', username, result['message'])
+
     except Exception as e:
         logger.error('Pipeline failed: %s', e, exc_info=True)
         await update.message.reply_text(

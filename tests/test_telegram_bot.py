@@ -54,12 +54,14 @@ async def test_ignores_non_album_spotify_url():
 async def test_calls_pipeline_for_valid_url():
     import telegram_bot
     update = make_update(f"@aotw {VALID_URL}")
-    mock_result = {'message': 'Added *Some Album* by Some Artist — Pick #42 ✅'}
+    mock_result = {'success': True, 'message': 'Added *Some Album* by Some Artist — Pick #42 ✅', 'data': {'Album': 'Some Album'}}
 
     with patch.dict('sys.modules', {'pipeline': MagicMock(process_album=AsyncMock(return_value=mock_result))}):
         await telegram_bot.handle_message(update, MagicMock())
 
-    update.message.reply_text.assert_called_once_with(mock_result['message'])
+    call_args = update.message.reply_text.call_args
+    assert call_args[0][0] == mock_result['message']
+    assert call_args[1].get('parse_mode') == 'Markdown'
 
 
 @pytest.mark.asyncio
@@ -81,7 +83,7 @@ async def test_handles_pipeline_exception():
 async def test_pattern_is_case_insensitive():
     import telegram_bot
     update = make_update(f"@AOTW {VALID_URL}")
-    mock_result = {'message': 'Added!'}
+    mock_result = {'success': True, 'message': 'Added!', 'data': {'Album': 'Test'}}
 
     with patch.dict('sys.modules', {'pipeline': MagicMock(process_album=AsyncMock(return_value=mock_result))}):
         await telegram_bot.handle_message(update, MagicMock())

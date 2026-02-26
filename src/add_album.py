@@ -83,21 +83,21 @@ def get_album_info(url = '', spot_api = None):
     return to_return
 
 def get_spotify_api():
+    # Prefer env vars (used on Railway); fall back to local credentials file for dev
+    CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+    CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
-    credentials_file = "spotify_credentials.json"
-    base_dir = os.path.dirname(os.path.abspath(credentials_file))
-    cred_path = os.path.join(base_dir, '..', 'spotify_credentials.json')
-
-    with open(cred_path, 'r') as cred_file:
-        creds = json.load(cred_file)
-
-    CLIENT_ID = creds.get('CLIENT_ID')
-    CLIENT_SECRET = creds.get('CLIENT_SECRET')
+    if not CLIENT_ID or not CLIENT_SECRET:
+        # Local dev: read from spotify_credentials.json at the repo root
+        repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+        cred_path = os.path.join(repo_root, 'spotify_credentials.json')
+        with open(cred_path, 'r') as cred_file:
+            creds = json.load(cred_file)
+        CLIENT_ID = creds.get('CLIENT_ID')
+        CLIENT_SECRET = creds.get('CLIENT_SECRET')
 
     auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
-    sp = spotipy.Spotify(auth_manager=auth_manager)
-
-    return sp
+    return spotipy.Spotify(auth_manager=auth_manager)
 
 def get_default_creds_path():
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -105,18 +105,45 @@ def get_default_creds_path():
     candidate = os.path.join(repo_root, default_name)
     return candidate if os.path.isfile(candidate) else None
 
-def get_google_sheet(sheet_id = None, sheet_tab = None, creds_path = None):
+def get_google_sheet(sheet_id=None, sheet_tab=None, creds_path=None):
+    import tempfile
 
-    sheet_id = sheet_id or os.getenv('GOOGLE_SHEET_ID') or '1h1uDCZPqJovFfUKPzfPgUwUOHjFdCXHWVhUE6VvFA_s'
+    sheet_id  = sheet_id  or os.getenv('GOOGLE_SHEET_ID') or '1h1uDCZPqJovFfUKPzfPgUwUOHjFdCXHWVhUE6VvFA_s'
     sheet_tab = sheet_tab or os.getenv('GOOGLE_SHEET_TAB', 'Sheet1')
-    creds_path = creds_path or os.getenv('GOOGLE_SERVICE_ACCOUNT_FILE') or get_default_creds_path()
 
     if not sheet_id:
         raise ValueError('Missing Google Sheet ID. Set GOOGLE_SHEET_ID or pass --sheet-id.')
-    if not creds_path:
-        raise ValueError('Missing service account JSON. Set GOOGLE_SERVICE_ACCOUNT_FILE or pass --service-account-file.')
 
-    gc = gspread.service_account(filename = creds_path)
+    # GOOGLE_SERVICE_ACCOUNT_JSON can be either:
+    #   - JSON content as a string (Railway stores large secrets this way)
+    #   - A file path (local dev or CI)
+    # GOOGLE_SERVICE_ACCOUNT_FILE is kept for backward compatibility.
+    service_account_json = os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON')
+
+    if service_account_json and service_account_json.strip().startswith('{'):
+        # It's raw JSON — write to a temp file so gspread can read it
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as f:
+            f.write(service_account_json)
+            tmp_path = f.name
+        try:
+            gc = gspread.service_account(filename=tmp_path)
+        finally:
+            os.unlink(tmp_path)  # Always clean up, even if gspread raises
+    else:
+        # File path: prefer explicit arg, then env vars, then default on-disk file
+        resolved_path = (
+            creds_path
+            or service_account_json
+            or os.getenv('GOOGLE_SERVICE_ACCOUNT_FILE')
+            or get_default_creds_path()
+        )
+        if not resolved_path:
+            raise ValueError(
+                'Missing service account credentials. '
+                'Set GOOGLE_SERVICE_ACCOUNT_JSON or GOOGLE_SERVICE_ACCOUNT_FILE.'
+            )
+        gc = gspread.service_account(filename=resolved_path)
+
     sheet = gc.open_by_key(sheet_id)
     worksheet = sheet.worksheet(sheet_tab)
     return worksheet

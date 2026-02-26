@@ -7,6 +7,7 @@ from validation import (
     extract_spotify_album_id,
     validate_album_metadata,
 )
+from github_push import export_and_push
 from add_album import (
     get_spotify_api,
     get_album_info,
@@ -103,11 +104,36 @@ async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None
             'message': "❌ Failed to add album to sheet. Please try again.",
         }
 
-    # Step 7: Return success
     artist = album_info.get('Artist', 'Unknown')
     album_name = album_info.get('Album', 'Unknown')
+
+    # Step 7: Export sheet to JSON and push to GitHub so the website stays in sync.
+    # The sheet is the source of truth — if the push fails the album is still safely
+    # stored, and the next successful run will self-heal the website.
+    github_success, github_message = export_and_push(
+        sheet_id=sheet_id,
+        sheet_tab=sheet_tab,
+        creds_path=creds_path,
+        album_info=album_info,
+    )
+
+    if not github_success:
+        logger.warning('GitHub push failed but sheet updated: %s', github_message)
+        return {
+            'success': True,          # Sheet write succeeded — album is safe
+            'message': (
+                f"✅ Added *{album_name}* by *{artist}* to sheet.\n"
+                f"⚠️ {github_message}"
+            ),
+            'data': album_info,
+            'partial_failure': True,  # Lets callers know the website hasn't updated yet
+        }
+
     return {
         'success': True,
-        'message': f"✅ Added *{album_name}* by *{artist}*",
+        'message': (
+            f"✅ Added *{album_name}* by *{artist}*.\n"
+            f"🌐 {github_message}"
+        ),
         'data': album_info,
     }

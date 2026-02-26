@@ -25,6 +25,7 @@ _HEADER_MAP = 'pipeline.get_header_row_and_map'
 _HEADER_CELLS = 'pipeline.find_header_cells'
 _NEXT_DATE = 'pipeline.get_next_pick_number_and_date'
 _BUILD_ROW = 'pipeline.build_row_from_header'
+_GITHUB = 'pipeline.export_and_push'
 
 
 def make_worksheet():
@@ -158,21 +159,31 @@ async def test_sheet_append_failure_returns_error():
     assert "Failed to add album" in result['message']
 
 
-# --- Step 7: Success ---
+# --- Steps 7+8: GitHub push and success ---
+
+def _success_patches(ws, header_map, pick_cell, date_cell, github_result=(True, 'Website will update shortly')):
+    """Return a context manager stack for a fully successful pipeline run."""
+    return [
+        patch(_SHEET, return_value=ws),
+        patch(_DEDUP, return_value=(False, None)),
+        patch(_SP_API, return_value=MagicMock()),
+        patch(_ALBUM_INFO, return_value=ALBUM_INFO),
+        patch(_VALIDATE, return_value=(True, "")),
+        patch(_HEADER_MAP, return_value=(1, header_map)),
+        patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)),
+        patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))),
+        patch(_GITHUB, return_value=github_result),
+    ]
+
 
 @pytest.mark.asyncio
 async def test_successful_pipeline_returns_success():
     import pipeline
     ws = make_worksheet()
     header_map, pick_cell, date_cell = make_header_mocks()
-    with patch(_SHEET, return_value=ws), \
-         patch(_DEDUP, return_value=(False, None)), \
-         patch(_SP_API, return_value=MagicMock()), \
-         patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
-         patch(_VALIDATE, return_value=(True, "")), \
-         patch(_HEADER_MAP, return_value=(1, header_map)), \
-         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
-         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))):
+    patches = _success_patches(ws, header_map, pick_cell, date_cell)
+    with patches[0], patches[1], patches[2], patches[3], patches[4], \
+         patches[5], patches[6], patches[7], patches[8]:
         result = await pipeline.process_album(VALID_URL)
     assert result['success'] is True
     assert "OK Computer" in result['message']
@@ -185,14 +196,9 @@ async def test_successful_pipeline_calls_append_row():
     import pipeline
     ws = make_worksheet()
     header_map, pick_cell, date_cell = make_header_mocks()
-    with patch(_SHEET, return_value=ws), \
-         patch(_DEDUP, return_value=(False, None)), \
-         patch(_SP_API, return_value=MagicMock()), \
-         patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
-         patch(_VALIDATE, return_value=(True, "")), \
-         patch(_HEADER_MAP, return_value=(1, header_map)), \
-         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
-         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))):
+    patches = _success_patches(ws, header_map, pick_cell, date_cell)
+    with patches[0], patches[1], patches[2], patches[3], patches[4], \
+         patches[5], patches[6], patches[7], patches[8]:
         await pipeline.process_album(VALID_URL)
     ws.append_row.assert_called_once()
 
@@ -211,9 +217,43 @@ async def test_successful_pipeline_passes_empty_pick_number():
          patch(_HEADER_MAP, return_value=(1, header_map)), \
          patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
          patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))), \
-         patch(_BUILD_ROW) as mock_build:
+         patch(_BUILD_ROW) as mock_build, \
+         patch(_GITHUB, return_value=(True, 'Website will update shortly')):
         mock_build.return_value = [''] * 4
         await pipeline.process_album(VALID_URL)
     # Second argument to build_row_from_header must be empty string (no pick number)
     args = mock_build.call_args[0]
     assert args[1] == ''
+
+
+@pytest.mark.asyncio
+async def test_github_failure_returns_partial_failure():
+    """If GitHub push fails, success=True (sheet is safe) but partial_failure flag is set."""
+    import pipeline
+    ws = make_worksheet()
+    header_map, pick_cell, date_cell = make_header_mocks()
+    patches = _success_patches(
+        ws, header_map, pick_cell, date_cell,
+        github_result=(False, 'Website update pending (will sync on next run)'),
+    )
+    with patches[0], patches[1], patches[2], patches[3], patches[4], \
+         patches[5], patches[6], patches[7], patches[8]:
+        result = await pipeline.process_album(VALID_URL)
+    assert result['success'] is True
+    assert result.get('partial_failure') is True
+    assert "OK Computer" in result['message']
+    assert "pending" in result['message']
+
+
+@pytest.mark.asyncio
+async def test_github_success_includes_website_message():
+    """Full success message should include the GitHub/website confirmation."""
+    import pipeline
+    ws = make_worksheet()
+    header_map, pick_cell, date_cell = make_header_mocks()
+    patches = _success_patches(ws, header_map, pick_cell, date_cell)
+    with patches[0], patches[1], patches[2], patches[3], patches[4], \
+         patches[5], patches[6], patches[7], patches[8]:
+        result = await pipeline.process_album(VALID_URL)
+    assert 'partial_failure' not in result
+    assert "Website will update shortly" in result['message']

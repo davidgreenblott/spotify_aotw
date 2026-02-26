@@ -13,3 +13,4 @@ dependencies:
       - gspread
       - python-telegram-bot>=20.0
       - pytest-asyncio
+      - requests
