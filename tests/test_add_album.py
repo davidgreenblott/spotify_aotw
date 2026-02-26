@@ -23,6 +23,8 @@ class TestGetUserArgs:
         assert good_album_info is not None
         print(good_album_info["Album"])
         assert good_album_info["Album"] == "Under the Table and Dreaming (Expanded Edition)"
+        assert good_album_info["spotify_album_id"] == "0SeRWS3scHWplJhMppd6rJ"
+        assert len(good_album_info["spotify_album_id"]) == 22
 
         # test bad url
         bad_album_info = add_album.get_album_info(url = bad_url, spot_api = sp)
