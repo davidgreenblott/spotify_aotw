@@ -1,0 +1,156 @@
+/* ── Reset & base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #121212;
+  --surface:   #1e1e1e;
+  --border:    #2a2a2a;
+  --text:      #e0e0e0;
+  --muted:     #888;
+  --accent:    #1db954;   /* Spotify green */
+  --radius:    8px;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: 1.5rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Search & filter inputs ───────────────────────────────────── */
+.search-bar,
+.filter-bar select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.875rem;
+  padding: 0.45rem 0.75rem;
+  outline: none;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-bar:focus,
+.filter-bar select:focus {
+  border-color: var(--accent);
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Album grid ───────────────────────────────────────────────── */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Album card ───────────────────────────────────────────────── */
+.album-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.album-card img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.album-card__no-art {
+  aspect-ratio: 1;
+  background: var(--border);
+}
+
+.album-card__info {
+  padding: 0.6rem 0.75rem 0.75rem;
+}
+
+.album-card__pick {
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.album-card__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-card__artist {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-card__meta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* ── Status messages ──────────────────────────────────────────── */
+.status {
+  text-align: center;
+  padding: 4rem;
+  color: var(--muted);
+}
+
+.status.error { color: #e05c5c; }
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: var(--muted);
+}

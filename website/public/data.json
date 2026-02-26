@@ -1,0 +1,35 @@
+[
+  {
+    "spotify_album_id": "0SeRWS3scHWplJhMppd6rJ",
+    "pick_number": 1,
+    "picked_at": "2025-01-05",
+    "artist": "Dave Matthews Band",
+    "album": "Under the Table and Dreaming",
+    "year": "1994",
+    "artwork_url": "https://i.scdn.co/image/ab67616d00001e028b661bd40fbd8c6fbb26e3df",
+    "spotify_url": "https://open.spotify.com/album/0SeRWS3scHWplJhMppd6rJ",
+    "picker": "dave"
+  },
+  {
+    "spotify_album_id": "4LH4d3cOWNNsVw41Gqt2kv",
+    "pick_number": 2,
+    "picked_at": "2025-01-12",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": "1997",
+    "artwork_url": "https://i.scdn.co/image/ab67616d00001e02f725bc7907dcf15aa2c6e7b7",
+    "spotify_url": "https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv",
+    "picker": "alice"
+  },
+  {
+    "spotify_album_id": "1BZnpfFBovJnGHhFrQjbWB",
+    "pick_number": 3,
+    "picked_at": "2025-01-19",
+    "artist": "Kendrick Lamar",
+    "album": "good kid, m.A.A.d city",
+    "year": "2012",
+    "artwork_url": "https://i.scdn.co/image/ab67616d00001e0278de8b28de36a74afc0348b5",
+    "spotify_url": "https://open.spotify.com/album/1BZnpfFBovJnGHhFrQjbWB",
+    "picker": "bob"
+  }
+]
