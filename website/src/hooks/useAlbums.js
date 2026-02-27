@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { uniqueValues } from '../utils/filterSort'
 
 export function useAlbums() {
   const [albums, setAlbums] = useState([])
@@ -23,4 +24,13 @@ export function useAlbums() {
   }, [])
 
   return { albums, loading, error }
+}
+
+/** Derives sorted unique values for year, artist, and picker from an album list. */
+export function useAlbumMetadata(albums) {
+  return useMemo(() => ({
+    years:   uniqueValues(albums, 'year'),
+    artists: uniqueValues(albums, 'artist'),
+    pickers: uniqueValues(albums, 'picker'),
+  }), [albums])
 }

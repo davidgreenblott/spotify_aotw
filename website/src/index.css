@@ -1,19 +1,68 @@
+:root {
+  /* Dark theme (default) */
+  --bg-primary:   #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --card-bg:      #1e1e1e;
+  --filter-bg:    #1a1a1a;
+  --input-bg:     #252525;
+  --button-bg:    #2a2a2a;
+  --button-hover: #353535;
+
+  --text-primary:   #e5e5e5;
+  --text-secondary: #a0a0a0;
+  --text-tertiary:  #707070;
+
+  --border-color: #333;
+  --accent-color: #1db954;   /* Spotify green */
+  --artwork-bg:   #252525;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+  --radius: 8px;
+}
+
+/* Optional light mode (commented out for now)
+[data-theme="light"] {
+  --bg-primary:   #ffffff;
+  --bg-secondary: #f5f5f5;
+  --card-bg:      #ffffff;
+  --filter-bg:    #f8f8f8;
+  --input-bg:     #ffffff;
+  --button-bg:    #e5e5e5;
+  --button-hover: #d0d0d0;
+
+  --text-primary:   #1a1a1a;
+  --text-secondary: #606060;
+  --text-tertiary:  #909090;
+
+  --border-color: #e0e0e0;
+  --accent-color: #1db954;
+  --artwork-bg:   #f0f0f0;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+*/
+
 /* ── Reset & base ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --bg:        #121212;
-  --surface:   #1e1e1e;
-  --border:    #2a2a2a;
-  --text:      #e0e0e0;
-  --muted:     #888;
-  --accent:    #1db954;   /* Spotify green */
-  --radius:    8px;
-  font-family: system-ui, Helvetica, Arial, sans-serif;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
   font-size: 16px;
-  color: var(--text);
-  background: var(--bg);
 }
+
+#root { min-height: 100vh; }
 
 a { color: inherit; text-decoration: none; }
 img { display: block; width: 100%; }
@@ -29,15 +78,15 @@ img { display: block; width: 100%; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--bg);
+  background: var(--bg-primary);
   padding: 1.5rem 0 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
 
 .header h1 {
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--accent-color);
   margin-bottom: 0.75rem;
   letter-spacing: -0.5px;
 }
@@ -48,44 +97,9 @@ img { display: block; width: 100%; }
   flex-wrap: wrap;
 }
 
-/* ── Search & filter inputs ───────────────────────────────────── */
-.search-bar,
-.filter-bar select {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-size: 0.875rem;
-  padding: 0.45rem 0.75rem;
-  outline: none;
-}
-
-.search-bar {
-  flex: 1;
-  min-width: 200px;
-}
-
-.search-bar:focus,
-.filter-bar select:focus {
-  border-color: var(--accent);
-}
-
-.filter-bar {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-/* ── Album grid ───────────────────────────────────────────────── */
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.25rem;
-}
-
 /* ── Album card ───────────────────────────────────────────────── */
 .album-card {
-  background: var(--surface);
+  background: var(--card-bg);
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 0.15s, box-shadow 0.15s;
@@ -94,7 +108,7 @@ img { display: block; width: 100%; }
 
 .album-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .album-card img {
@@ -104,7 +118,7 @@ img { display: block; width: 100%; }
 
 .album-card__no-art {
   aspect-ratio: 1;
-  background: var(--border);
+  background: var(--artwork-bg);
 }
 
 .album-card__info {
@@ -113,7 +127,7 @@ img { display: block; width: 100%; }
 
 .album-card__pick {
   font-size: 0.7rem;
-  color: var(--accent);
+  color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -128,7 +142,7 @@ img { display: block; width: 100%; }
 
 .album-card__artist {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -136,7 +150,7 @@ img { display: block; width: 100%; }
 
 .album-card__meta {
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   margin-top: 0.2rem;
 }
 
@@ -144,7 +158,7 @@ img { display: block; width: 100%; }
 .status {
   text-align: center;
   padding: 4rem;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .status.error { color: #e05c5c; }
@@ -152,5 +166,25 @@ img { display: block; width: 100%; }
 .no-results {
   text-align: center;
   padding: 3rem;
-  color: var(--muted);
+  color: var(--text-secondary);
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 12px; }
+
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+
+::-webkit-scrollbar-thumb {
+  background: var(--button-bg);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover { background: var(--button-hover); }
+
+/* ── Focus states (accessibility) ────────────────────────────── */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }

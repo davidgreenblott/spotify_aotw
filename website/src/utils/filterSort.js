@@ -23,6 +23,13 @@ export function filterAndSort(albums, searchTerm = '', filters = {}) {
     results = results.filter(a => String(a.year) === String(filters.year))
   }
 
+  // Filter by artist
+  if (filters.artist) {
+    results = results.filter(a =>
+      a.artist.toLowerCase() === filters.artist.toLowerCase()
+    )
+  }
+
   // Filter by picker (who submitted it)
   if (filters.picker) {
     results = results.filter(a =>
@@ -46,4 +53,28 @@ export function filterAndSort(albums, searchTerm = '', filters = {}) {
 /** Return unique sorted values for a given field (used to populate filter dropdowns). */
 export function uniqueValues(albums, field) {
   return [...new Set(albums.map(a => a[field]).filter(Boolean))].sort()
+}
+
+/**
+ * Wrapper around filterAndSort that accepts a unified options object.
+ * sortBy in options is a fallback when filters.sortBy is not set.
+ * direction: 'asc' | 'desc' — reverses the sorted result when 'desc'.
+ */
+export function processAlbums(albums, { searchTerm = '', filters = {}, sortBy = 'pick_number', direction = 'asc' } = {}) {
+  const effectiveSortBy = filters.sortBy || sortBy
+  const results = filterAndSort(albums, searchTerm, { ...filters, sortBy: effectiveSortBy })
+  return direction === 'desc' ? results.reverse() : results
+}
+
+/**
+ * Group an array of albums by pick year (derived from picked_at field).
+ * Returns an object keyed by year string, e.g. { "2025": [...], "2026": [...] }.
+ */
+export function groupByYear(albums) {
+  return albums.reduce((acc, album) => {
+    const year = album.picked_at ? String(album.picked_at).slice(0, 4) : 'Unknown'
+    if (!acc[year]) acc[year] = []
+    acc[year].push(album)
+    return acc
+  }, {})
 }
