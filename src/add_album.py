@@ -250,6 +250,7 @@ def build_row_from_header(header_map, pick_value, date_value, album_info, header
     set_if_present('label', album_info.get('Label', ''))
     set_if_present('total_tracks', str(album_info.get('Total Tracks', '')))
     set_if_present('genres', album_info.get('Genres', ''))
+    set_if_present('apple_music_url', album_info.get('apple_music_url', ''))
 
     return row
 

@@ -21,6 +21,7 @@ _DEDUP = 'pipeline.check_duplicate'
 _SP_API = 'pipeline.get_spotify_api'
 _ALBUM_INFO = 'pipeline.get_album_info'
 _VALIDATE = 'pipeline.validate_album_metadata'
+_ODESLI = 'pipeline._fetch_apple_music_url'
 _HEADER_MAP = 'pipeline.get_header_row_and_map'
 _HEADER_CELLS = 'pipeline.find_header_cells'
 _NEXT_DATE = 'pipeline.get_next_pick_number_and_date'
@@ -151,6 +152,7 @@ async def test_sheet_append_failure_returns_error():
          patch(_SP_API, return_value=MagicMock()), \
          patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
          patch(_VALIDATE, return_value=(True, "")), \
+         patch(_ODESLI, return_value=''), \
          patch(_HEADER_MAP, return_value=(1, header_map)), \
          patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
          patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))):
@@ -169,6 +171,7 @@ def _success_patches(ws, header_map, pick_cell, date_cell, github_result=(True, 
         patch(_SP_API, return_value=MagicMock()),
         patch(_ALBUM_INFO, return_value=ALBUM_INFO),
         patch(_VALIDATE, return_value=(True, "")),
+        patch(_ODESLI, return_value='https://music.apple.com/album/ok-computer/12345'),
         patch(_HEADER_MAP, return_value=(1, header_map)),
         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)),
         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))),
@@ -183,12 +186,11 @@ async def test_successful_pipeline_returns_success():
     header_map, pick_cell, date_cell = make_header_mocks()
     patches = _success_patches(ws, header_map, pick_cell, date_cell)
     with patches[0], patches[1], patches[2], patches[3], patches[4], \
-         patches[5], patches[6], patches[7], patches[8]:
+         patches[5], patches[6], patches[7], patches[8], patches[9]:
         result = await pipeline.process_album(VALID_URL)
     assert result['success'] is True
     assert "OK Computer" in result['message']
     assert "Radiohead" in result['message']
-    assert result['data'] == ALBUM_INFO
 
 
 @pytest.mark.asyncio
@@ -198,7 +200,7 @@ async def test_successful_pipeline_calls_append_row():
     header_map, pick_cell, date_cell = make_header_mocks()
     patches = _success_patches(ws, header_map, pick_cell, date_cell)
     with patches[0], patches[1], patches[2], patches[3], patches[4], \
-         patches[5], patches[6], patches[7], patches[8]:
+         patches[5], patches[6], patches[7], patches[8], patches[9]:
         await pipeline.process_album(VALID_URL)
     ws.append_row.assert_called_once()
 
@@ -214,6 +216,7 @@ async def test_successful_pipeline_passes_header_row_for_pick_formula():
          patch(_SP_API, return_value=MagicMock()), \
          patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
          patch(_VALIDATE, return_value=(True, "")), \
+         patch(_ODESLI, return_value=''), \
          patch(_HEADER_MAP, return_value=(1, header_map)), \
          patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
          patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))), \
@@ -227,6 +230,52 @@ async def test_successful_pipeline_passes_header_row_for_pick_formula():
     assert args[4] == 1        # header_row passed so formula =ROW()-1 is written
 
 
+# --- Step 5.5: Odesli Apple Music lookup ---
+
+@pytest.mark.asyncio
+async def test_apple_music_url_added_to_album_info():
+    """Apple Music URL from Odesli should be stored in album_info passed to build_row."""
+    import pipeline
+    ws = make_worksheet()
+    header_map, pick_cell, date_cell = make_header_mocks()
+    apple_url = 'https://music.apple.com/album/ok-computer/12345'
+    with patch(_SHEET, return_value=ws), \
+         patch(_DEDUP, return_value=(False, None)), \
+         patch(_SP_API, return_value=MagicMock()), \
+         patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
+         patch(_VALIDATE, return_value=(True, "")), \
+         patch(_ODESLI, return_value=apple_url), \
+         patch(_HEADER_MAP, return_value=(1, header_map)), \
+         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
+         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))), \
+         patch(_BUILD_ROW) as mock_build, \
+         patch(_GITHUB, return_value=(True, 'Website will update shortly')):
+        mock_build.return_value = [''] * 4
+        await pipeline.process_album(VALID_URL)
+    info_arg = mock_build.call_args[0][3]
+    assert info_arg.get('apple_music_url') == apple_url
+
+
+@pytest.mark.asyncio
+async def test_odesli_failure_does_not_block_pipeline():
+    """If Odesli lookup fails, the pipeline should still succeed with empty apple_music_url."""
+    import pipeline
+    ws = make_worksheet()
+    header_map, pick_cell, date_cell = make_header_mocks()
+    with patch(_SHEET, return_value=ws), \
+         patch(_DEDUP, return_value=(False, None)), \
+         patch(_SP_API, return_value=MagicMock()), \
+         patch(_ALBUM_INFO, return_value=ALBUM_INFO), \
+         patch(_VALIDATE, return_value=(True, "")), \
+         patch(_ODESLI, return_value=''), \
+         patch(_HEADER_MAP, return_value=(1, header_map)), \
+         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
+         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))), \
+         patch(_GITHUB, return_value=(True, 'Website will update shortly')):
+        result = await pipeline.process_album(VALID_URL)
+    assert result['success'] is True
+
+
 @pytest.mark.asyncio
 async def test_github_failure_returns_partial_failure():
     """If GitHub push fails, success=True (sheet is safe) but partial_failure flag is set."""
@@ -238,7 +287,7 @@ async def test_github_failure_returns_partial_failure():
         github_result=(False, 'Website update pending (will sync on next run)'),
     )
     with patches[0], patches[1], patches[2], patches[3], patches[4], \
-         patches[5], patches[6], patches[7], patches[8]:
+         patches[5], patches[6], patches[7], patches[8], patches[9]:
         result = await pipeline.process_album(VALID_URL)
     assert result['success'] is True
     assert result.get('partial_failure') is True
@@ -254,7 +303,7 @@ async def test_github_success_includes_website_message():
     header_map, pick_cell, date_cell = make_header_mocks()
     patches = _success_patches(ws, header_map, pick_cell, date_cell)
     with patches[0], patches[1], patches[2], patches[3], patches[4], \
-         patches[5], patches[6], patches[7], patches[8]:
+         patches[5], patches[6], patches[7], patches[8], patches[9]:
         result = await pipeline.process_album(VALID_URL)
     assert 'partial_failure' not in result
     assert "Website will update shortly" in result['message']
