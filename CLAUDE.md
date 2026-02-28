@@ -78,6 +78,23 @@ Always write unit tests for new functions and significant changes. Use `pytest`.
 - **Secrets in env vars only** — `GOOGLE_SERVICE_ACCOUNT_JSON` accepts raw JSON string or file path
 - **AlbumGrid threshold** — < 50 albums → flat grid; ≥ 50 → grouped by pick year with collapse/expand
 
+## Two-Repo Workflow
+
+Website code lives in **both** repos and must be kept in sync:
+
+| Repo | Path | Purpose |
+|---|---|---|
+| `spotify_aotw` (this repo) | `website/` | Source of truth for website code |
+| `aotw-website` | `../aotw-website/` | Netlify deploy target; also receives `data.json` from the bot |
+
+When making website changes, apply them to both repos and push both remotes. For files under `website/src/` or `website/public/` (except `data.json`), copy the changed file(s) to the equivalent path in `aotw-website/` and commit + push there too.
+
+```bash
+# Example: sync a changed component
+cp website/src/components/Foo.css ../aotw-website/src/components/Foo.css
+cd ../aotw-website && git add -p && git commit -m "..." && git pull --rebase && git push
+```
+
 ## External Credentials (gitignored)
 
 - `spotify_credentials.json` — Spotify API credentials (local dev fallback)
