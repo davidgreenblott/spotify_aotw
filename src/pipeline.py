@@ -87,14 +87,14 @@ async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None
             'message': f"❌ {validation_error}",
         }
 
-    # Step 6: Append to Google Sheet (pick # auto-filled by =ROW()-1 formula)
+    # Step 6: Append to Google Sheet (pick # written as =ROW()-N formula)
     try:
         header_row, header_map = get_header_row_and_map(worksheet)
         pick_cell, date_cell = find_header_cells(worksheet)
         _, next_date = get_next_pick_number_and_date(
             worksheet, header_row, pick_cell.col, date_cell.col
         )
-        row = build_row_from_header(header_map, '', next_date, album_info)
+        row = build_row_from_header(header_map, '', next_date, album_info, header_row)
         worksheet.append_row(row, value_input_option='USER_ENTERED')
         logger.info('Sheet append succeeded for album: %s', album_id)
     except Exception as e:

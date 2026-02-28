@@ -204,8 +204,8 @@ async def test_successful_pipeline_calls_append_row():
 
 
 @pytest.mark.asyncio
-async def test_successful_pipeline_passes_empty_pick_number():
-    """Pick column uses =ROW()-1 formula — pipeline must not pass a pick number."""
+async def test_successful_pipeline_passes_header_row_for_pick_formula():
+    """Pipeline must pass header_row so build_row_from_header writes =ROW()-N formula."""
     import pipeline
     ws = make_worksheet()
     header_map, pick_cell, date_cell = make_header_mocks()
@@ -221,9 +221,10 @@ async def test_successful_pipeline_passes_empty_pick_number():
          patch(_GITHUB, return_value=(True, 'Website will update shortly')):
         mock_build.return_value = [''] * 4
         await pipeline.process_album(VALID_URL)
-    # Second argument to build_row_from_header must be empty string (no pick number)
+    # pick_value arg is '' (unused); header_row (5th arg) is passed so the formula is written
     args = mock_build.call_args[0]
-    assert args[1] == ''
+    assert args[1] == ''       # pick_value unused
+    assert args[4] == 1        # header_row passed so formula =ROW()-1 is written
 
 
 @pytest.mark.asyncio

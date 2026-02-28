@@ -73,12 +73,30 @@ def get_album_info(url = '', spot_api = None):
         year = release_date
     artwork_url = raw_info['images'][1]['url']
 
+    label = raw_info.get('label', '')
+    total_tracks = raw_info.get('total_tracks', '')
+
+    # Try album genres first; fall back to artist genres (more reliably populated)
+    genres = raw_info.get('genres', [])
+    if not genres:
+        try:
+            artist_id = raw_info['artists'][0].get('id', '')
+            if artist_id:
+                artist_info = spot_api.artist(artist_id)
+                genres = artist_info.get('genres', [])
+        except Exception:
+            genres = []
+    genres_str = ', '.join(genres)
+
     to_return = {"spotify_album_id": album_id,
                  "Artist": artist,
                  "Album": album,
                  "Year": year,
                  "spotify_album_url": url,
-                 "artwork_url": artwork_url}
+                 "artwork_url": artwork_url,
+                 "Label": label,
+                 "Total Tracks": total_tracks,
+                 "Genres": genres_str}
 
     return to_return
 
@@ -209,7 +227,7 @@ def get_next_pick_number_and_date(worksheet, header_row, pick_col, date_col):
     next_date = (last_date + timedelta(days = 7)) if last_date else None
     return next_pick, next_date
 
-def build_row_from_header(header_map, pick_value, date_value, album_info):
+def build_row_from_header(header_map, pick_value, date_value, album_info, header_row=None):
     header_len = max(header_map.values()) + 1 if header_map else 0
     row = [''] * header_len
 
@@ -218,7 +236,10 @@ def build_row_from_header(header_map, pick_value, date_value, album_info):
         if idx is not None:
             row[idx] = value
 
-    set_if_present('pick', str(pick_value))
+    # Use a live formula so the pick number is always correct regardless of row position,
+    # matching the =ROW()-N pattern used in existing rows.
+    pick_formula = f'=ROW()-{header_row}' if header_row is not None else str(pick_value)
+    set_if_present('pick', pick_formula)
     set_if_present('date', format_sheet_date(date_value))
     set_if_present('artist', album_info.get('Artist', ''))
     set_if_present('album', album_info.get('Album', ''))
@@ -226,6 +247,9 @@ def build_row_from_header(header_map, pick_value, date_value, album_info):
     set_if_present('spotify_album_id', album_info.get('spotify_album_id', ''))
     set_if_present('spotify_album_url', album_info.get('spotify_album_url', ''))
     set_if_present('artwork_url', album_info.get('artwork_url', ''))
+    set_if_present('label', album_info.get('Label', ''))
+    set_if_present('total_tracks', str(album_info.get('Total Tracks', '')))
+    set_if_present('genres', album_info.get('Genres', ''))
 
     return row
 
@@ -298,7 +322,7 @@ def add_album(url = '', sheet_id = None, sheet_tab = None, creds_path = None):
             pick_cell.col,
             date_cell.col
         )
-        row = build_row_from_header(header_map, next_pick, next_date, next_album_info)
+        row = build_row_from_header(header_map, next_pick, next_date, next_album_info, header_row)
         worksheet.append_row(row, value_input_option = 'USER_ENTERED')
     except (GSpreadException, ValueError) as exc:
         logger.error('Failed to append row to Google Sheet: %s', exc)
