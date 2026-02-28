@@ -4,7 +4,6 @@
   },
   "deploy": {
     "startCommand": "python src/telegram_bot.py",
-    "restartPolicyType": "ON_FAILURE",
-    "healthcheckPath": "/"
+    "restartPolicyType": "ON_FAILURE"
   }
 }
