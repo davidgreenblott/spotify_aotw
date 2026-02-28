@@ -5,7 +5,7 @@ Assigns initials cyclically (SS → DG → RB → JC) based on pick number.
 Only writes to rows where the picker cell is currently empty.
 
 Usage:
-    python src/backfill_pickers.py [--dry-run]
+    python src/backfill_pickers.py [--dry-run] [--force]
 """
 import sys
 import os
@@ -29,7 +29,7 @@ def _picker_for(pick_number: int) -> str:
     return _FULL_CYCLE[pos]
 
 
-def backfill_pickers(sheet_id=None, sheet_tab=None, creds_path=None, dry_run=False):
+def backfill_pickers(sheet_id=None, sheet_tab=None, creds_path=None, dry_run=False, force=False):
     worksheet = get_google_sheet(sheet_id, sheet_tab, creds_path)
     header_row, header_map = get_header_row_and_map(worksheet)
 
@@ -50,7 +50,7 @@ def backfill_pickers(sheet_id=None, sheet_tab=None, creds_path=None, dry_run=Fal
             continue
 
         current_picker = row[picker_col_idx].strip() if picker_col_idx < len(row) else ''
-        if current_picker:
+        if current_picker and not force:
             continue  # already assigned — don't overwrite
 
         try:
@@ -81,4 +81,5 @@ def backfill_pickers(sheet_id=None, sheet_tab=None, creds_path=None, dry_run=Fal
 
 if __name__ == '__main__':
     dry_run = '--dry-run' in sys.argv
-    backfill_pickers(dry_run=dry_run)
+    force = '--force' in sys.argv
+    backfill_pickers(dry_run=dry_run, force=force)
