@@ -58,7 +58,7 @@ function AlbumGrid({ albums, searchTerm, filters, sortBy = 'date', direction = '
       <div className="grid-controls">
         <button onClick={expandAll}>Expand All</button>
         <button onClick={collapseAll}>Collapse All</button>
-        <span>{processedAlbums.length} albums</span>
+        <span>Total Albums: {processedAlbums.length}</span>
       </div>
 
       {years.map(year => {

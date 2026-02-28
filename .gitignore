@@ -9,6 +9,9 @@ spotify_credentials.json
 *service_account*.json
 aotw-488201-8465cf54c9d9.json
 
+# Local dev data (real data copied in for local testing)
+website/public/data.json
+
 # Misc
 .cache
 __pycache__/

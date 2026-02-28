@@ -1,0 +1,28 @@
+.analytics-page {
+  padding: 2rem 0;
+}
+
+.analytics-page h2 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+.chart-section {
+  margin-bottom: 2.5rem;
+}
+
+.chart-section h3 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem 1rem;
+}
