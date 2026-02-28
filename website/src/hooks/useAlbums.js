@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { uniqueValues } from '../utils/filterSort'
+import { uniqueDecades } from '../utils/filterSort'
 
 export function useAlbums() {
   const [albums, setAlbums] = useState([])
@@ -26,11 +26,9 @@ export function useAlbums() {
   return { albums, loading, error }
 }
 
-/** Derives sorted unique values for year, artist, and picker from an album list. */
+/** Derives unique decades from album release years. */
 export function useAlbumMetadata(albums) {
   return useMemo(() => ({
-    years:   uniqueValues(albums, 'year'),
-    artists: uniqueValues(albums, 'artist'),
-    pickers: uniqueValues(albums, 'picker'),
+    decades: uniqueDecades(albums),
   }), [albums])
 }

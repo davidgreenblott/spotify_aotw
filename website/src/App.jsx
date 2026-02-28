@@ -1,31 +1,33 @@
-import { useState } from 'react'
-import AlbumGrid from './components/AlbumGrid'
-import SearchBar from './components/SearchBar'
-import FilterBar from './components/FilterBar'
-import { useAlbums } from './hooks/useAlbums'
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
+import PicksPage from './pages/PicksPage'
+import AboutPage from './pages/AboutPage'
 import './index.css'
 
 function App() {
-  const { albums, loading, error } = useAlbums()
-  const [searchTerm, setSearchTerm] = useState('')
-  const [filters, setFilters] = useState({})
-
-  if (loading) return <div className="status">Loading albums...</div>
-  if (error)   return <div className="status error">Failed to load albums.</div>
-
   return (
-    <div className="app">
-      <header className="header">
-        <h1>Album of the Week</h1>
-        <div className="controls">
-          <SearchBar value={searchTerm} onChange={setSearchTerm} />
-          <FilterBar filters={filters} onChange={setFilters} albums={albums} />
-        </div>
-      </header>
-      <main>
-        <AlbumGrid albums={albums} searchTerm={searchTerm} filters={filters} />
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <header className="header">
+          <div className="header-top">
+            <Link to="/" className="site-title">
+              <h1>album of the week</h1>
+            </Link>
+            <nav className="nav">
+              <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                the picks
+              </NavLink>
+              <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                about
+              </NavLink>
+            </nav>
+          </div>
+        </header>
+        <Routes>
+          <Route path="/" element={<PicksPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

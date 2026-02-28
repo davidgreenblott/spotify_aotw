@@ -4,7 +4,7 @@ import { processAlbums, groupByYear } from '../utils/filterSort'
 import './AlbumGrid.css'
 
 function AlbumGrid({ albums, searchTerm, filters, sortBy = 'date', direction = 'desc' }) {
-  const [expandedYears, setExpandedYears] = useState(new Set())
+  const [expandedYears, setExpandedYears] = useState(() => new Set([String(new Date().getFullYear())]))
 
   // Process albums (filter, search, sort)
   const processedAlbums = useMemo(() => {
@@ -39,8 +39,8 @@ function AlbumGrid({ albums, searchTerm, filters, sortBy = 'date', direction = '
     )
   }
 
-  // Flat grid for small result sets
-  if (processedAlbums.length < 50) {
+  // Flat grid for small result sets or when any explicit sort is active
+  if (processedAlbums.length < 50 || filters.sortBy) {
     return (
       <div className="album-grid-container">
         <div className="album-grid">

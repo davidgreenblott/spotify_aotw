@@ -18,23 +18,13 @@ export function filterAndSort(albums, searchTerm = '', filters = {}) {
     )
   }
 
-  // Filter by release year
-  if (filters.year) {
-    results = results.filter(a => String(a.year) === String(filters.year))
-  }
-
-  // Filter by artist
-  if (filters.artist) {
-    results = results.filter(a =>
-      a.artist.toLowerCase() === filters.artist.toLowerCase()
-    )
-  }
-
-  // Filter by picker (who submitted it)
-  if (filters.picker) {
-    results = results.filter(a =>
-      a.picker.toLowerCase() === filters.picker.toLowerCase()
-    )
+  // Filter by release decade (e.g. 2020 matches years 2020-2029)
+  if (filters.decade) {
+    const decade = Number(filters.decade)
+    results = results.filter(a => {
+      const y = Number(a.year)
+      return y >= decade && y < decade + 10
+    })
   }
 
   // Sort
@@ -55,6 +45,13 @@ export function uniqueValues(albums, field) {
   return [...new Set(albums.map(a => a[field]).filter(Boolean))].sort()
 }
 
+/** Return unique decades (e.g. 2020, 2010, 2000) derived from album release years, sorted newest first. */
+export function uniqueDecades(albums) {
+  return [...new Set(
+    albums.map(a => a.year).filter(Boolean).map(y => Math.floor(Number(y) / 10) * 10)
+  )].sort((a, b) => b - a)
+}
+
 /**
  * Wrapper around filterAndSort that accepts a unified options object.
  * sortBy in options is a fallback when filters.sortBy is not set.
@@ -62,8 +59,9 @@ export function uniqueValues(albums, field) {
  */
 export function processAlbums(albums, { searchTerm = '', filters = {}, sortBy = 'pick_number', direction = 'asc' } = {}) {
   const effectiveSortBy = filters.sortBy || sortBy
+  const effectiveDirection = filters.sortDir || direction
   const results = filterAndSort(albums, searchTerm, { ...filters, sortBy: effectiveSortBy })
-  return direction === 'desc' ? results.reverse() : results
+  return effectiveDirection === 'desc' ? results.reverse() : results
 }
 
 /**
