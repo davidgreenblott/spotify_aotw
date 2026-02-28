@@ -19,7 +19,7 @@ logger = setup_logging()
 GITHUB_TOKEN      = os.getenv('GITHUB_TOKEN')
 GITHUB_REPO_OWNER = os.getenv('GITHUB_REPO_OWNER')  # e.g. 'davidgreenblott'
 GITHUB_REPO_NAME  = os.getenv('GITHUB_REPO_NAME')   # e.g. 'aotw-website'
-GITHUB_FILE_PATH  = 'data.json'                      # path inside the repo
+GITHUB_FILE_PATH  = 'public/data.json'               # path inside the repo (Vite serves public/ at root)
 GITHUB_BRANCH     = 'main'
 
 
