@@ -660,6 +660,21 @@
     "picker": "SS"
   },
   {
+    "spotify_album_id": "5KMP6XLSrhsswEuN2A9VO2",
+    "pick_number": 45,
+    "picked_at": "2020-11-08",
+    "artist": "John Mayer",
+    "album": "Inside Wants Out",
+    "year": "1999",
+    "label": "Aware/Columbia",
+    "genres": "singer-songwriter",
+    "total_tracks": "8",
+    "artwork_url": "https://i.scdn.co/image/ab67616d00001e0213b8932e94c65ca93bd9b0a7",
+    "spotify_url": "https://open.spotify.com/album/5KMP6XLSrhsswEuN2A9VO2?si=cUx3A17IR1CLcO6CYFRIaw",
+    "apple_music_url": "",
+    "picker": "DG"
+  },
+  {
     "spotify_album_id": "1bkN9nIkkCnXeG4yitVS1J",
     "pick_number": 46,
     "picked_at": "2020-11-15",
