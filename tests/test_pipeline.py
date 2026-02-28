@@ -296,6 +296,29 @@ async def test_github_failure_returns_partial_failure():
 
 
 @pytest.mark.asyncio
+async def test_picker_forwarded_to_build_row():
+    """picker kwarg should be attached to album_info before build_row_from_header is called."""
+    import pipeline
+    ws = make_worksheet()
+    header_map, pick_cell, date_cell = make_header_mocks()
+    with patch(_SHEET, return_value=ws), \
+         patch(_DEDUP, return_value=(False, None)), \
+         patch(_SP_API, return_value=MagicMock()), \
+         patch(_ALBUM_INFO, return_value=dict(ALBUM_INFO)), \
+         patch(_VALIDATE, return_value=(True, "")), \
+         patch(_ODESLI, return_value=''), \
+         patch(_HEADER_MAP, return_value=(1, header_map)), \
+         patch(_HEADER_CELLS, return_value=(pick_cell, date_cell)), \
+         patch(_NEXT_DATE, return_value=(1, date(2025, 1, 12))), \
+         patch(_BUILD_ROW) as mock_build, \
+         patch(_GITHUB, return_value=(True, 'Website will update shortly')):
+        mock_build.return_value = [''] * 4
+        await pipeline.process_album(VALID_URL, picker='DG')
+    info_arg = mock_build.call_args[0][3]
+    assert info_arg.get('picker') == 'DG'
+
+
+@pytest.mark.asyncio
 async def test_github_success_includes_website_message():
     """Full success message should include the GitHub/website confirmation."""
     import pipeline

@@ -38,7 +38,7 @@ def _fetch_apple_music_url(spotify_url: str) -> str:
         return ''
 
 
-async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None) -> Dict:
+async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None, picker='') -> Dict:
     """Main pipeline orchestrator.
 
     Returns: {'success': bool, 'message': str, 'data': dict}
@@ -106,6 +106,7 @@ async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None
     # Step 5.5: Look up Apple Music URL via Odesli (non-blocking — failure is acceptable)
     apple_music_url = _fetch_apple_music_url(url)
     album_info['apple_music_url'] = apple_music_url
+    album_info['picker'] = picker
     if apple_music_url:
         logger.info('Apple Music URL found for %s', album_id)
     else:

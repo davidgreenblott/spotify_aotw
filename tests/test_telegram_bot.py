@@ -80,6 +80,36 @@ async def test_handles_pipeline_exception():
 
 
 @pytest.mark.asyncio
+async def test_known_username_resolves_to_picker_initials():
+    """d_blott should map to DG and be passed to process_album as picker='DG'."""
+    import telegram_bot
+    update = make_update(f"@aotw {VALID_URL}")
+    update.effective_user.username = "d_blott"
+    mock_result = {'success': True, 'message': 'Added!', 'data': {'Album': 'Test'}}
+    mock_process = AsyncMock(return_value=mock_result)
+
+    with patch.dict('sys.modules', {'pipeline': MagicMock(process_album=mock_process)}):
+        await telegram_bot.handle_message(update, MagicMock())
+
+    assert mock_process.call_args[1].get('picker') == 'DG'
+
+
+@pytest.mark.asyncio
+async def test_unknown_username_passes_empty_picker():
+    """An unrecognised username should pass picker='' so the cell is left blank."""
+    import telegram_bot
+    update = make_update(f"@aotw {VALID_URL}")
+    update.effective_user.username = "unknownperson"
+    mock_result = {'success': True, 'message': 'Added!', 'data': {'Album': 'Test'}}
+    mock_process = AsyncMock(return_value=mock_result)
+
+    with patch.dict('sys.modules', {'pipeline': MagicMock(process_album=mock_process)}):
+        await telegram_bot.handle_message(update, MagicMock())
+
+    assert mock_process.call_args[1].get('picker') == ''
+
+
+@pytest.mark.asyncio
 async def test_pattern_is_case_insensitive():
     import telegram_bot
     update = make_update(f"@AOTW {VALID_URL}")
