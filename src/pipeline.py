@@ -1,6 +1,8 @@
 import time
 from typing import Dict
 
+import requests
+
 from logging_config import setup_logging
 from validation import (
     is_valid_spotify_album_url,
@@ -20,6 +22,20 @@ from add_album import (
 )
 
 logger = setup_logging()
+
+_ODESLI_API = 'https://api.song.link/v1-alpha.1/links'
+
+
+def _fetch_apple_music_url(spotify_url: str) -> str:
+    """Look up Apple Music URL via Odesli API. Returns '' on any failure."""
+    try:
+        resp = requests.get(_ODESLI_API, params={'url': spotify_url}, timeout=10)
+        if resp.status_code == 200:
+            return resp.json().get('linksByPlatform', {}).get('appleMusic', {}).get('url', '')
+        return ''
+    except Exception as e:
+        logger.warning('Odesli lookup failed: %s', e)
+        return ''
 
 
 async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None) -> Dict:
@@ -86,6 +102,14 @@ async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None
             'success': False,
             'message': f"❌ {validation_error}",
         }
+
+    # Step 5.5: Look up Apple Music URL via Odesli (non-blocking — failure is acceptable)
+    apple_music_url = _fetch_apple_music_url(url)
+    album_info['apple_music_url'] = apple_music_url
+    if apple_music_url:
+        logger.info('Apple Music URL found for %s', album_id)
+    else:
+        logger.info('No Apple Music URL found for %s', album_id)
 
     # Step 6: Append to Google Sheet (pick # written as =ROW()-N formula)
     try:
