@@ -8,9 +8,9 @@ For full architecture and design decisions see `AOTW_Project_Summary_2026_02_23.
 
 ---
 
-## Current State (as of 2026-02-26)
+## Current State (as of 2026-02-27)
 
-Tasks 1–17, 19, 20, 22 of 26 are complete. The backend and frontend are built. **Next task is Task 18**.
+All 26 tasks are code-complete. The system is deployed to Railway (bot) and the website repo (`aotw-website`) is ready for Netlify. **One blocker remains before Task 26 (end-to-end test) can be signed off: the Railway bot has a Telegram polling conflict.**
 
 ### Completed
 
@@ -28,25 +28,48 @@ Tasks 1–17, 19, 20, 22 of 26 are complete. The backend and frontend are built.
 | 10 | GitHub API push | `src/github_push.py` — Contents API, base64 PUT |
 | 11 | Partial failure handling | `pipeline.py` returns `partial_failure: True` if GitHub fails after sheet write |
 | 12 | Wire Telegram bot to pipeline | `telegram_bot.py` passes env vars to `process_album`, `parse_mode='Markdown'` |
-| 13 | Railway deployment config | `railway.json`, `Procfile`, `requirements.txt`, `DEPLOYMENT.md` |
+| 13 | Railway deployment config | `railway.json`, `requirements.txt`, `DEPLOYMENT.md` |
 | 14 | React + Vite scaffold | `website/` — Vite, React, project structure |
-| 15 | AlbumCard component | `website/src/components/AlbumCard.jsx` — CD placeholder fallback on img error |
+| 15 | AlbumCard component | `website/src/components/AlbumCard.jsx` |
 | 16 | SearchBar component | `website/src/components/SearchBar.jsx` |
 | 17 | FilterBar component | `website/src/components/FilterBar.jsx` — year/picker/sort dropdowns |
-| 19 | useAlbums hook | `website/src/hooks/useAlbums.js` — fetches `/data.json` |
-| 20 | filterSort utils | `website/src/utils/filterSort.js` — `filterAndSort()`, `uniqueValues()` |
+| 18 | AlbumGrid with year grouping | `website/src/components/AlbumGrid.jsx` — flat < 50, grouped ≥ 50 |
+| 19 | useAlbums hook | `website/src/hooks/useAlbums.js` |
+| 20 | filterSort utils | `website/src/utils/filterSort.js` |
+| 21 | Dark mode CSS | `website/src/index.css` — CSS variables + dark mode |
 | 22 | Netlify config | `website/netlify.toml`, `DEPLOYMENT_WEBSITE.md` |
+| 23 | GitHub website repo | `davidgreenblott/aotw-website` created, `data.json` at root, PAT set in Railway |
+| 24 | Integration tests | `tests/test_integration.py` — 103 tests total, all passing |
+| 25 | Env config + docs | `.env.example`, `DEPLOYMENT.md`, `DEPLOYMENT_WEBSITE.md` updated |
 
 ### Pending
 
-| # | Task |
-|---|------|
-| **18** | **AlbumGrid with year-based grouping + collapse/expand** ← START HERE |
-| 21 | Dark mode CSS variables |
-| 23 | GitHub website repo setup (manual steps) |
-| 24 | Integration tests |
-| 25 | Update env config + docs |
-| 26 | End-to-end system test |
+| # | Task | Notes |
+|---|------|-------|
+| **26** | **End-to-end system test** | Blocked by Railway polling conflict (see below) |
+
+---
+
+## BLOCKER — Railway Telegram Polling Conflict
+
+**Error:** `telegram.error.Conflict: terminated by other getUpdates request`
+
+**What we know:**
+- No webhook is set (confirmed via `getWebhookInfo`)
+- Replicas is set to 1 in Railway
+- `Procfile` has been removed (was causing duplicate process launch — now fixed)
+- `drop_pending_updates=True` added to `run_polling()` (clears webhooks on start)
+- Conflict persists across redeployments
+
+**Likely cause:** Railway's rolling redeploy starts the new container before stopping the old one, causing a brief window where both poll Telegram simultaneously. With a polling bot this triggers the conflict on every deploy.
+
+**Recommended fix (next session):** Switch from polling to webhooks. Railway provides a public HTTPS URL which can serve as the webhook endpoint. This is more robust and eliminates the conflict entirely.
+
+**Webhook migration involves:**
+1. Add a web server to `telegram_bot.py` (python-telegram-bot has built-in webhook support via `run_webhook()`)
+2. Set `PORT` env var in Railway and expose it
+3. Call Telegram's `setWebhook` API with the Railway public URL
+4. Remove the `run_polling()` call
 
 ---
 
@@ -92,7 +115,6 @@ website/
   netlify.toml                 # Build config, SPA redirect, cache headers
 
 railway.json                   # Nixpacks builder, restart on failure
-Procfile                       # worker: python src/telegram_bot.py
 requirements.txt               # Runtime deps only (no pytest/PyQt)
 DEPLOYMENT.md                  # Railway setup guide + env var table
 DEPLOYMENT_WEBSITE.md          # Netlify setup guide
@@ -100,23 +122,9 @@ DEPLOYMENT_WEBSITE.md          # Netlify setup guide
 
 ---
 
-## Task 18 — What Needs Doing
-
-`AlbumGrid.jsx` currently renders a **flat grid**. Task 18 upgrades it to:
-
-- **< 50 albums** → flat grid (current behaviour)
-- **≥ 50 albums** → grouped by pick year with collapse/expand toggles
-- `useMemo` for performance
-- Expand All / Collapse All controls
-- Needs a companion `AlbumGrid.css`
-
-The taskmaster spec has the full JSX skeleton ready — use `mcp__taskmaster-ai__get_task` with id `18`.
-
----
-
 ## Test Suite Status
 
-**87 tests passing** across all test files (except `test_add_album.py` which needs live Spotify creds).
+**103 tests passing** across all test files (except `test_add_album.py` which needs live Spotify creds).
 
 ```bash
 # Run all mocked tests

@@ -70,11 +70,26 @@ def main():
     if not ALLOWED_CHAT_ID:
         raise ValueError('TELEGRAM_ALLOWED_CHAT_ID env var not set')
 
+    railway_domain = os.getenv('RAILWAY_PUBLIC_DOMAIN')
+    if not railway_domain:
+        raise ValueError('RAILWAY_PUBLIC_DOMAIN env var not set')
+
+    port = int(os.getenv('PORT', '8080'))
+    secret_token = os.getenv('WEBHOOK_SECRET_TOKEN')
+    webhook_url = f'https://{railway_domain}/telegram'
+
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    logger.info('Bot starting in polling mode...')
-    app.run_polling(drop_pending_updates=True)
+    logger.info('Bot starting in webhook mode on port %d (url: %s)...', port, webhook_url)
+    app.run_webhook(
+        listen='0.0.0.0',
+        port=port,
+        url_path='/telegram',
+        webhook_url=webhook_url,
+        secret_token=secret_token,
+        drop_pending_updates=True,
+    )
 
 
 if __name__ == '__main__':
