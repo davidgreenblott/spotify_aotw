@@ -36,7 +36,8 @@ export default function AlbumCard({ album }) {
         <span className="album-card__pick">#{pick_number}</span>
         <p className="album-card__title">{title}</p>
         <p className="album-card__artist">{artist}</p>
-        <p className="album-card__meta">{year}{picker ? ` · ${picker}` : ''}</p>
+        <p className="album-card__meta">{year}</p>
+        {picker && <span className="album-card__picker">{picker}</span>}
         <div className="album-card__links">
           {spotify_url && (
             <a

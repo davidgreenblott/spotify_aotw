@@ -2,7 +2,7 @@
   {
     "spotify_album_id": "6ZG5lRT77aJ3btmArcykra",
     "pick_number": 1,
-    "picked_at": "2020-01-19",
+    "picked_at": "2020-01-26",
     "artist": "Coldplay",
     "album": "Parachutes",
     "year": "2000",
@@ -17,7 +17,7 @@
   {
     "spotify_album_id": "35UJLpClj5EDrhpNIi4DFg",
     "pick_number": 2,
-    "picked_at": "2020-01-26",
+    "picked_at": "2020-02-02",
     "artist": "Radiohead",
     "album": "The Bends",
     "year": "1995",
@@ -32,7 +32,7 @@
   {
     "spotify_album_id": "4Uv86qWpGTxf7fU7lG5X6F",
     "pick_number": 3,
-    "picked_at": "2020-02-02",
+    "picked_at": "2020-02-09",
     "artist": "Kanye West",
     "album": "The College Dropout",
     "year": "2004",
@@ -47,7 +47,7 @@
   {
     "spotify_album_id": "1Rv9WRKyYhFaGbuYDaQunN",
     "pick_number": 4,
-    "picked_at": "2020-02-09",
+    "picked_at": "2020-02-16",
     "artist": "Maroon 5",
     "album": "Songs About Jane",
     "year": "2002",
@@ -62,7 +62,7 @@
   {
     "spotify_album_id": "0YF8PfcGbsKg5IaFyPnlyY",
     "pick_number": 5,
-    "picked_at": "2020-02-16",
+    "picked_at": "2020-02-23",
     "artist": "Anderson .Paak",
     "album": "Ventura",
     "year": "2019",
@@ -77,7 +77,7 @@
   {
     "spotify_album_id": "1Sf8GsXG32t0jNrX11xqWx",
     "pick_number": 6,
-    "picked_at": "2020-02-23",
+    "picked_at": "2020-03-01",
     "artist": "Travis Scott",
     "album": "JACKBOYS",
     "year": "2019",
@@ -92,7 +92,7 @@
   {
     "spotify_album_id": "2UJcKiJxNryhL050F5Z1Fk",
     "pick_number": 7,
-    "picked_at": "2020-03-01",
+    "picked_at": "2020-03-08",
     "artist": "Nirvana",
     "album": "Nevermind (Remastered)",
     "year": "1991",
@@ -105,23 +105,8 @@
     "picker": "JC"
   },
   {
-    "spotify_album_id": "5B4PYA7wNN4WdEXdIJu58a",
-    "pick_number": 8,
-    "picked_at": "2020-03-08",
-    "artist": "Pearl Jam",
-    "album": "Ten",
-    "year": "1991",
-    "label": "Epic/Legacy",
-    "genres": "grunge, rock, post-grunge",
-    "total_tracks": "11",
-    "artwork_url": "https://i.scdn.co/image/ab67616d00001e02d400d27cba05bb0545533864",
-    "spotify_url": "https://open.spotify.com/album/5B4PYA7wNN4WdEXdIJu58a",
-    "apple_music_url": "https://geo.music.apple.com/us/album/_/425465247?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-    "picker": "SS"
-  },
-  {
     "spotify_album_id": "3eqkfT9f1XyM8GME1gVDrD",
-    "pick_number": 9,
+    "pick_number": 8,
     "picked_at": "2020-03-15",
     "artist": "Black Eyed Peas",
     "album": "Elephunk",
@@ -136,7 +121,7 @@
   },
   {
     "spotify_album_id": "2NRRQLuW6j3EsoWpIl2MR3",
-    "pick_number": 10,
+    "pick_number": 9,
     "picked_at": "2020-03-22",
     "artist": "The Black Crowes",
     "album": "Shake Your Money Maker",
@@ -151,7 +136,7 @@
   },
   {
     "spotify_album_id": "5zi7WsKlIiUXv09tbGLKsE",
-    "pick_number": 11,
+    "pick_number": 10,
     "picked_at": "2020-03-29",
     "artist": "Tyler, The Creator",
     "album": "IGOR",
@@ -166,7 +151,7 @@
   },
   {
     "spotify_album_id": "5ysMC5s4nOCDtPBYrTa5pl",
-    "pick_number": 12,
+    "pick_number": 11,
     "picked_at": "2020-04-05",
     "artist": "Caribou",
     "album": "Our Love",
@@ -181,7 +166,7 @@
   },
   {
     "spotify_album_id": "2gToC0XAblE9h3UZD6aAaQ",
-    "pick_number": 13,
+    "pick_number": 12,
     "picked_at": "2020-04-12",
     "artist": "Third Eye Blind",
     "album": "Third Eye Blind",
@@ -196,7 +181,7 @@
   },
   {
     "spotify_album_id": "50o7kf2wLwVmOTVYJOTplm",
-    "pick_number": 14,
+    "pick_number": 13,
     "picked_at": "2020-04-19",
     "artist": "The Beatles",
     "album": "Rubber Soul (Remastered)",
@@ -211,7 +196,7 @@
   },
   {
     "spotify_album_id": "4TJUrdwbeKC9qcouPlBuLe",
-    "pick_number": 15,
+    "pick_number": 14,
     "picked_at": "2020-04-26",
     "artist": "COIN",
     "album": "How Will You Know If You Never Try",
@@ -226,7 +211,7 @@
   },
   {
     "spotify_album_id": "6RVN0MPUbYBiYm2Otf6Li2",
-    "pick_number": 16,
+    "pick_number": 15,
     "picked_at": "2020-05-03",
     "artist": "The Marcus King Band",
     "album": "Carolina Confessions",
@@ -241,7 +226,7 @@
   },
   {
     "spotify_album_id": "6EB14IXV5oyOiItGBv7mtG",
-    "pick_number": 17,
+    "pick_number": 16,
     "picked_at": "2020-05-10",
     "artist": "M83",
     "album": "Hurry up, We're Dreaming",
@@ -256,7 +241,7 @@
   },
   {
     "spotify_album_id": "2BGBKhA5Oo3MMg7VccWeae",
-    "pick_number": 18,
+    "pick_number": 17,
     "picked_at": "2020-05-17",
     "artist": "Bob Marley & The Wailers",
     "album": "Exodus (Deluxe Edition)",
@@ -271,7 +256,7 @@
   },
   {
     "spotify_album_id": "692R05mxz7V6eOFoj5PMlQ",
-    "pick_number": 19,
+    "pick_number": 18,
     "picked_at": "2020-05-24",
     "artist": "Childish Gambino",
     "album": "Atavista",
@@ -286,7 +271,7 @@
   },
   {
     "spotify_album_id": "2ZmDoyNYarmubD4vTfwh6g",
-    "pick_number": 20,
+    "pick_number": 19,
     "picked_at": "2020-05-31",
     "artist": "Joey Bada$$",
     "album": "ALL-AMERIKKKAN BADA$$",
@@ -301,7 +286,7 @@
   },
   {
     "spotify_album_id": "4Gfnly5CzMJQqkUFfoHaP3",
-    "pick_number": 21,
+    "pick_number": 20,
     "picked_at": "2020-06-07",
     "artist": "Linkin Park",
     "album": "Meteora",
@@ -316,7 +301,7 @@
   },
   {
     "spotify_album_id": "3C2MFZ2iHotUQOSBzdSvM7",
-    "pick_number": 22,
+    "pick_number": 21,
     "picked_at": "2020-06-14",
     "artist": "Tame Impala",
     "album": "Lonerism",
@@ -331,7 +316,7 @@
   },
   {
     "spotify_album_id": "1ORxRsK3MrSLvh7VQTF01F",
-    "pick_number": 23,
+    "pick_number": 22,
     "picked_at": "2020-06-21",
     "artist": "Lana Del Rey",
     "album": "Ultraviolence (Deluxe)",
@@ -346,7 +331,7 @@
   },
   {
     "spotify_album_id": "2y3AR5hVWrVnM24Rh4ENYH",
-    "pick_number": 24,
+    "pick_number": 23,
     "picked_at": "2020-06-28",
     "artist": "Luke Christopher",
     "album": "TMRWFRVR",
@@ -361,7 +346,7 @@
   },
   {
     "spotify_album_id": "0RHX9XECH8IVI3LNgWDpmQ",
-    "pick_number": 25,
+    "pick_number": 24,
     "picked_at": "2020-07-05",
     "artist": "Coldplay",
     "album": "A Rush of Blood to the Head",
@@ -376,7 +361,7 @@
   },
   {
     "spotify_album_id": "1BZoqf8Zje5nGdwZhOjAtD",
-    "pick_number": 26,
+    "pick_number": 25,
     "picked_at": "2020-07-12",
     "artist": "Ms. Lauryn Hill",
     "album": "The Miseducation of Lauryn Hill",
@@ -391,7 +376,7 @@
   },
   {
     "spotify_album_id": "2ZUFSbIkmFkGag000RWOpA",
-    "pick_number": 27,
+    "pick_number": 26,
     "picked_at": "2020-07-19",
     "artist": "Drake",
     "album": "Nothing Was The Same (Deluxe)",
@@ -406,7 +391,7 @@
   },
   {
     "spotify_album_id": "6trNtQUgC8cgbWcqoMYkOR",
-    "pick_number": 28,
+    "pick_number": 27,
     "picked_at": "2020-07-26",
     "artist": "Post Malone",
     "album": "beerbongs & bentleys",
@@ -421,7 +406,7 @@
   },
   {
     "spotify_album_id": "3VekjWskUut57hx6W9wqL8",
-    "pick_number": 29,
+    "pick_number": 28,
     "picked_at": "2020-08-02",
     "artist": "No Doubt",
     "album": "Tragic Kingdom",
@@ -436,7 +421,7 @@
   },
   {
     "spotify_album_id": "2IZe9ttqeMqwkv3dRXJRkd",
-    "pick_number": 30,
+    "pick_number": 29,
     "picked_at": "2020-08-09",
     "artist": "Grateful Dead",
     "album": "Aoxomoxoa (2013 Remaster)",
@@ -451,7 +436,7 @@
   },
   {
     "spotify_album_id": "6f6tko6NWoH00cyFOl4VYQ",
-    "pick_number": 31,
+    "pick_number": 30,
     "picked_at": "2020-08-16",
     "artist": "Mac Miller",
     "album": "The Divine Feminine",
@@ -466,7 +451,7 @@
   },
   {
     "spotify_album_id": "28S63tpbApp3AhWZZYN6l9",
-    "pick_number": 32,
+    "pick_number": 31,
     "picked_at": "2020-08-23",
     "artist": "Stick Figure",
     "album": "Set in Stone",
@@ -481,7 +466,7 @@
   },
   {
     "spotify_album_id": "1MmVkhiwTH0BkNOU3nw5d3",
-    "pick_number": 33,
+    "pick_number": 32,
     "picked_at": "2020-08-30",
     "artist": "Doja Cat",
     "album": "Hot Pink",
@@ -496,7 +481,7 @@
   },
   {
     "spotify_album_id": "6DEjYFkNZh67HP7R9PSZvv",
-    "pick_number": 34,
+    "pick_number": 33,
     "picked_at": "2020-09-06",
     "artist": "Taylor Swift",
     "album": "reputation",
@@ -511,7 +496,7 @@
   },
   {
     "spotify_album_id": "7Ffm3ZluTZRYEdlE5Jjlid",
-    "pick_number": 35,
+    "pick_number": 34,
     "picked_at": "2020-09-13",
     "artist": "Chance the Rapper",
     "album": "Acid Rap",
@@ -526,7 +511,7 @@
   },
   {
     "spotify_album_id": "5EyIDBAqhnlkAHqvPRwdbX",
-    "pick_number": 36,
+    "pick_number": 35,
     "picked_at": "2020-09-20",
     "artist": "Led Zeppelin",
     "album": "Led Zeppelin IV (Remaster)",
@@ -541,7 +526,7 @@
   },
   {
     "spotify_album_id": "7lxHnls3yQNl8B9bILmHj7",
-    "pick_number": 37,
+    "pick_number": 36,
     "picked_at": "2020-09-27",
     "artist": "Chris Stapleton",
     "album": "Traveller",
@@ -556,7 +541,7 @@
   },
   {
     "spotify_album_id": "2gEurk31djZjI3P3SY8ZcC",
-    "pick_number": 38,
+    "pick_number": 37,
     "picked_at": "2020-10-04",
     "artist": "John Denver",
     "album": "Rocky Mountain High",
@@ -571,7 +556,7 @@
   },
   {
     "spotify_album_id": "5bfpRtBW7RNRdsm3tRyl3R",
-    "pick_number": 39,
+    "pick_number": 38,
     "picked_at": "2020-10-11",
     "artist": "Glass Animals",
     "album": "Dreamland",
@@ -586,7 +571,7 @@
   },
   {
     "spotify_album_id": "3kEtdS2pH6hKcMU9Wioob1",
-    "pick_number": 40,
+    "pick_number": 39,
     "picked_at": "2020-10-18",
     "artist": "Nas",
     "album": "Illmatic",
@@ -601,7 +586,7 @@
   },
   {
     "spotify_album_id": "3kfnwa4p4uYiTOP8K8ooSE",
-    "pick_number": 41,
+    "pick_number": 40,
     "picked_at": "2020-10-25",
     "artist": "Ella Fitzgerald",
     "album": "Ella and Louis",
@@ -616,7 +601,7 @@
   },
   {
     "spotify_album_id": "79thwyFL6Uo6rgTp3YWEAf",
-    "pick_number": 42,
+    "pick_number": 41,
     "picked_at": "2020-11-01",
     "artist": "HAIM",
     "album": "Women In Music Pt III (Expanded Edition)",
@@ -631,7 +616,7 @@
   },
   {
     "spotify_album_id": "6GHb9FYG7HnVet0rQs0Dq9",
-    "pick_number": 43,
+    "pick_number": 42,
     "picked_at": "2020-11-08",
     "artist": "Surfaces",
     "album": "Horizons",
@@ -646,7 +631,7 @@
   },
   {
     "spotify_album_id": "1bkN9nIkkCnXeG4yitVS1J",
-    "pick_number": 44,
+    "pick_number": 43,
     "picked_at": "2020-11-15",
     "artist": "Kendrick Lamar",
     "album": "Section.80",
@@ -661,7 +646,7 @@
   },
   {
     "spotify_album_id": "1yiEfvulcxY2P31dt7zFCA",
-    "pick_number": 45,
+    "pick_number": 44,
     "picked_at": "2020-11-22",
     "artist": "Tom Misch",
     "album": "Geography",
@@ -676,7 +661,7 @@
   },
   {
     "spotify_album_id": "4B2pV5Zds6478QOqA8yqdj",
-    "pick_number": 46,
+    "pick_number": 45,
     "picked_at": "2020-11-29",
     "artist": "WILLOW",
     "album": "WILLOW",
@@ -691,7 +676,7 @@
   },
   {
     "spotify_album_id": "4xVznyo9lcTZIop1qiqkQX",
-    "pick_number": 47,
+    "pick_number": 46,
     "picked_at": "2020-12-06",
     "artist": "Freddie King",
     "album": "Burglar",
@@ -706,7 +691,7 @@
   },
   {
     "spotify_album_id": "3xybjP7r2VsWzwvDQipdM0",
-    "pick_number": 48,
+    "pick_number": 47,
     "picked_at": "2020-12-13",
     "artist": "Daniel Caesar",
     "album": "Freudian",
@@ -721,7 +706,7 @@
   },
   {
     "spotify_album_id": "2ITJBRqMwZ0luWBnnZQ4Hq",
-    "pick_number": 49,
+    "pick_number": 48,
     "picked_at": "2020-12-20",
     "artist": "Sturgill Simpson",
     "album": "SOUND & FURY",
@@ -736,7 +721,7 @@
   },
   {
     "spotify_album_id": "4gPYH4cFOgaukEpzcAr7vw",
-    "pick_number": 50,
+    "pick_number": 49,
     "picked_at": "2020-12-27",
     "artist": "Oscar Peterson Trio",
     "album": "Night Train",
@@ -751,7 +736,7 @@
   },
   {
     "spotify_album_id": "6YUCc2RiXcEKS9ibuZxjt0",
-    "pick_number": 51,
+    "pick_number": 50,
     "picked_at": "2021-01-03",
     "artist": "Stevie Wonder",
     "album": "Songs In The Key Of Life",
@@ -766,7 +751,7 @@
   },
   {
     "spotify_album_id": "3mH6qwIy9crq0I9YQbOuDf",
-    "pick_number": 52,
+    "pick_number": 51,
     "picked_at": "2021-01-10",
     "artist": "Frank Ocean",
     "album": "Blonde",
@@ -781,7 +766,7 @@
   },
   {
     "spotify_album_id": "4VFG1DOuTeDMBjBLZT7hCK",
-    "pick_number": 53,
+    "pick_number": 52,
     "picked_at": "2021-01-17",
     "artist": "Anderson .Paak",
     "album": "Malibu",
@@ -796,7 +781,7 @@
   },
   {
     "spotify_album_id": "7fRrTyKvE4Skh93v97gtcU",
-    "pick_number": 54,
+    "pick_number": 53,
     "picked_at": "2021-01-24",
     "artist": "Billie Eilish",
     "album": "dont smile at me",
@@ -811,7 +796,7 @@
   },
   {
     "spotify_album_id": "0srPdZtPrceXPErRMF35cB",
-    "pick_number": 55,
+    "pick_number": 54,
     "picked_at": "2021-01-31",
     "artist": "Pyotr Ilyich Tchaikovsky",
     "album": "The Nutcracker",
@@ -826,7 +811,7 @@
   },
   {
     "spotify_album_id": "29Xikj6r9kQDSbnZWCCW2s",
-    "pick_number": 56,
+    "pick_number": 55,
     "picked_at": "2021-02-07",
     "artist": "AJR",
     "album": "Neotheater",
@@ -841,7 +826,7 @@
   },
   {
     "spotify_album_id": "1OnCqi7IuzjnrOh2ZNvJHd",
-    "pick_number": 57,
+    "pick_number": 56,
     "picked_at": "2021-02-14",
     "artist": "Kid Cudi",
     "album": "Man On The Moon: The End Of Day",
@@ -856,7 +841,7 @@
   },
   {
     "spotify_album_id": "6Pp6qGEywDdofgFC1oFbSH",
-    "pick_number": 58,
+    "pick_number": 57,
     "picked_at": "2021-02-21",
     "artist": "Phoebe Bridgers",
     "album": "Punisher",
@@ -871,7 +856,7 @@
   },
   {
     "spotify_album_id": "7LZAgsQQr0cm61SmUdgKlz",
-    "pick_number": 59,
+    "pick_number": 58,
     "picked_at": "2021-02-28",
     "artist": "Big Wild",
     "album": "Superdream",
@@ -886,7 +871,7 @@
   },
   {
     "spotify_album_id": "5FP9keIJnlSCKnkdVOf623",
-    "pick_number": 60,
+    "pick_number": 59,
     "picked_at": "2021-03-07",
     "artist": "J. Cole",
     "album": "Born Sinner (Deluxe Version)",
@@ -901,7 +886,7 @@
   },
   {
     "spotify_album_id": "5KSvuhwUw1fSCl4i8C8CKK",
-    "pick_number": 61,
+    "pick_number": 60,
     "picked_at": "2021-03-14",
     "artist": "YGTUT",
     "album": "Preacher's Son",
@@ -916,7 +901,7 @@
   },
   {
     "spotify_album_id": "0w8YD8Wz1hEkwXdsAMzzFe",
-    "pick_number": 62,
+    "pick_number": 61,
     "picked_at": "2021-03-21",
     "artist": "Dinah Washington",
     "album": "What A Diff'rence A Day Makes! (Expanded Edition)",
@@ -931,7 +916,7 @@
   },
   {
     "spotify_album_id": "76290XdXVF9rPzGdNRWdCh",
-    "pick_number": 63,
+    "pick_number": 62,
     "picked_at": "2021-03-28",
     "artist": "SZA",
     "album": "Ctrl",
@@ -946,7 +931,7 @@
   },
   {
     "spotify_album_id": "3nskYUkwdOrFTrczbtt6o2",
-    "pick_number": 64,
+    "pick_number": 63,
     "picked_at": "2021-04-04",
     "artist": "Black Pumas",
     "album": "Black Pumas",
@@ -961,7 +946,7 @@
   },
   {
     "spotify_album_id": "4UlGauD7ROb3YbVOFMgW5u",
-    "pick_number": 65,
+    "pick_number": 64,
     "picked_at": "2021-04-11",
     "artist": "Rihanna",
     "album": "ANTI (Deluxe)",
@@ -976,7 +961,7 @@
   },
   {
     "spotify_album_id": "2ZytN2cY4Zjrr9ukb2rqTP",
-    "pick_number": 66,
+    "pick_number": 65,
     "picked_at": "2021-04-18",
     "artist": "Michael Jackson",
     "album": "Off the Wall",
@@ -991,7 +976,7 @@
   },
   {
     "spotify_album_id": "74vajFwEwXJ61OW1DKSPEa",
-    "pick_number": 67,
+    "pick_number": 66,
     "picked_at": "2021-04-25",
     "artist": "Ariana Grande",
     "album": "Positions (Deluxe)",
@@ -1006,7 +991,7 @@
   },
   {
     "spotify_album_id": "20r762YmB5HeofjMCiPMLv",
-    "pick_number": 68,
+    "pick_number": 67,
     "picked_at": "2021-05-02",
     "artist": "Kanye West",
     "album": "My Beautiful Dark Twisted Fantasy",
@@ -1021,7 +1006,7 @@
   },
   {
     "spotify_album_id": "5gYCZgmXzzWXxOCb9fMfBm",
-    "pick_number": 69,
+    "pick_number": 68,
     "picked_at": "2021-05-09",
     "artist": "Jungle",
     "album": "For Ever",
@@ -1036,7 +1021,7 @@
   },
   {
     "spotify_album_id": "3vi20DRHkqv4HyVg9Rt9wC",
-    "pick_number": 70,
+    "pick_number": 69,
     "picked_at": "2021-05-16",
     "artist": "Brent Faiyaz",
     "album": "Fuck The World",
@@ -1051,7 +1036,7 @@
   },
   {
     "spotify_album_id": "7xl50xr9NDkd3i2kBbzsNZ",
-    "pick_number": 71,
+    "pick_number": 70,
     "picked_at": "2021-05-23",
     "artist": "Red Hot Chili Peppers",
     "album": "Stadium Arcadium",
@@ -1066,7 +1051,7 @@
   },
   {
     "spotify_album_id": "35dut3ICqF3NEDkjxfzJJ1",
-    "pick_number": 72,
+    "pick_number": 71,
     "picked_at": "2021-05-30",
     "artist": "The Weeknd",
     "album": "Starboy (Deluxe)",
@@ -1081,7 +1066,7 @@
   },
   {
     "spotify_album_id": "7LGVdC9fFwgWYaIrZwsSv6",
-    "pick_number": 73,
+    "pick_number": 72,
     "picked_at": "2021-06-06",
     "artist": "Black Sabbath",
     "album": "Paranoid",
@@ -1096,7 +1081,7 @@
   },
   {
     "spotify_album_id": "1kCHru7uhxBUdzkm4gzRQc",
-    "pick_number": 74,
+    "pick_number": 73,
     "picked_at": "2021-06-13",
     "artist": "Leslie Odom Jr.",
     "album": "Hamilton (Original Broadway Cast Recording)",
@@ -1111,7 +1096,7 @@
   },
   {
     "spotify_album_id": "4v5x3Oo3UjQ9YmF3hRAip5",
-    "pick_number": 75,
+    "pick_number": 74,
     "picked_at": "2021-06-20",
     "artist": "A Tribe Called Quest",
     "album": "Midnight Marauders",
@@ -1126,7 +1111,7 @@
   },
   {
     "spotify_album_id": "2NTIYavFZmU1PCvJvn2USJ",
-    "pick_number": 76,
+    "pick_number": 75,
     "picked_at": "2021-06-27",
     "artist": "Joey Bada$$",
     "album": "B4.DA.$$",
@@ -1141,7 +1126,7 @@
   },
   {
     "spotify_album_id": "2B9q4KPjOEYu885Keo9dfX",
-    "pick_number": 77,
+    "pick_number": 76,
     "picked_at": "2021-07-04",
     "artist": "Jack Johnson",
     "album": "In Between Dreams",
@@ -1156,7 +1141,7 @@
   },
   {
     "spotify_album_id": "5CS8E6JVACItYto4OOJoPW",
-    "pick_number": 78,
+    "pick_number": 77,
     "picked_at": "2021-07-11",
     "artist": "KAROL G",
     "album": "KG0516",
@@ -1171,7 +1156,7 @@
   },
   {
     "spotify_album_id": "6BRq5g6CWiFgN3NrjLGAYq",
-    "pick_number": 79,
+    "pick_number": 78,
     "picked_at": "2021-07-18",
     "artist": "Animal Collective",
     "album": "Merriweather Post Pavilion",
@@ -1186,7 +1171,7 @@
   },
   {
     "spotify_album_id": "0cMxALtiABnT1kIuA1wgsQ",
-    "pick_number": 80,
+    "pick_number": 79,
     "picked_at": "2021-07-25",
     "artist": "Kota the Friend",
     "album": "EVERYTHING",
@@ -1201,7 +1186,7 @@
   },
   {
     "spotify_album_id": "2XiBbHgNjlt3JLz8j2S61k",
-    "pick_number": 81,
+    "pick_number": 80,
     "picked_at": "2021-08-01",
     "artist": "Sticky Fingers",
     "album": "Caress Your Soul",
@@ -1216,7 +1201,7 @@
   },
   {
     "spotify_album_id": "7q2B4M5EiBkqrlsNW8lB7N",
-    "pick_number": 82,
+    "pick_number": 81,
     "picked_at": "2021-08-08",
     "artist": "Dr. Dre",
     "album": "2001",
@@ -1231,7 +1216,7 @@
   },
   {
     "spotify_album_id": "45ba6QAtNrdv6Ke4MFOKk9",
-    "pick_number": 83,
+    "pick_number": 82,
     "picked_at": "2021-08-15",
     "artist": "Tyler, The Creator",
     "album": "CALL ME IF YOU GET LOST",
@@ -1246,7 +1231,7 @@
   },
   {
     "spotify_album_id": "3UTazkAlLS4ZmVbIgJentC",
-    "pick_number": 84,
+    "pick_number": 83,
     "picked_at": "2021-08-22",
     "artist": "Logic",
     "album": "YS Collection Vol. 1",
@@ -1261,7 +1246,7 @@
   },
   {
     "spotify_album_id": "0W8N1RCdj7UfczwCHHWr1D",
-    "pick_number": 85,
+    "pick_number": 84,
     "picked_at": "2021-08-29",
     "artist": "Felly",
     "album": "Mariposa (Deluxe)",
@@ -1276,7 +1261,7 @@
   },
   {
     "spotify_album_id": "5AHWNPo3gllDmixgAoFru4",
-    "pick_number": 86,
+    "pick_number": 85,
     "picked_at": "2021-09-05",
     "artist": "Maggie Rogers",
     "album": "Heard It In A Past Life",
@@ -1291,7 +1276,7 @@
   },
   {
     "spotify_album_id": "3C5EpFJ6macPvh3WZiiZbY",
-    "pick_number": 87,
+    "pick_number": 86,
     "picked_at": "2021-09-12",
     "artist": "Allman Brothers Band",
     "album": "Eat A Peach (Deluxe Edition)",
@@ -1306,7 +1291,7 @@
   },
   {
     "spotify_album_id": "2Tyx5dLhHYkx6zeAdVaTzN",
-    "pick_number": 88,
+    "pick_number": 87,
     "picked_at": "2021-09-19",
     "artist": "Mac Miller",
     "album": "GO:OD AM",
@@ -1321,7 +1306,7 @@
   },
   {
     "spotify_album_id": "0C0OFASoQC57yC12vQhCwN",
-    "pick_number": 89,
+    "pick_number": 88,
     "picked_at": "2021-09-26",
     "artist": "Catfish and the Bottlemen",
     "album": "The Balcony",
@@ -1336,7 +1321,7 @@
   },
   {
     "spotify_album_id": "4SBl4zvNIL4H137YRf2P0J",
-    "pick_number": 90,
+    "pick_number": 89,
     "picked_at": "2021-10-03",
     "artist": "Lorde",
     "album": "Solar Power",
@@ -1351,7 +1336,7 @@
   },
   {
     "spotify_album_id": "5U4dnRZsfW8NmwBBkELFPh",
-    "pick_number": 91,
+    "pick_number": 90,
     "picked_at": "2021-10-10",
     "artist": "The Rolling Stones",
     "album": "Exile On Main Street (2010 Re-Mastered)",
@@ -1366,7 +1351,7 @@
   },
   {
     "spotify_album_id": "392p3shh2jkxUxY2VHvlH8",
-    "pick_number": 92,
+    "pick_number": 91,
     "picked_at": "2021-10-17",
     "artist": "Frank Ocean",
     "album": "channel ORANGE",
@@ -1381,7 +1366,7 @@
   },
   {
     "spotify_album_id": "1kAEI20bjSPsByL6LNIyCT",
-    "pick_number": 93,
+    "pick_number": 92,
     "picked_at": "2021-10-24",
     "artist": "The Teskey Brothers",
     "album": "Run Home Slow",
@@ -1396,7 +1381,7 @@
   },
   {
     "spotify_album_id": "4OIcFaouZZHOK6HDQNPRYV",
-    "pick_number": 94,
+    "pick_number": 93,
     "picked_at": "2021-10-31",
     "artist": "The Steeldrivers",
     "album": "The SteelDrivers",
@@ -1411,7 +1396,7 @@
   },
   {
     "spotify_album_id": "2as5ea7TPPkXI2OINaMjZR",
-    "pick_number": 95,
+    "pick_number": 94,
     "picked_at": "2021-11-07",
     "artist": "Billy Strings",
     "album": "Renewal",
@@ -1426,7 +1411,7 @@
   },
   {
     "spotify_album_id": "1YZ3k65Mqw3G8FzYlW1mmp",
-    "pick_number": 96,
+    "pick_number": 95,
     "picked_at": "2021-11-14",
     "artist": "Mac Miller",
     "album": "Circles (Deluxe)",
@@ -1441,7 +1426,7 @@
   },
   {
     "spotify_album_id": "3YtCeXNXsv7dz3LtBNs4xW",
-    "pick_number": 97,
+    "pick_number": 96,
     "picked_at": "2021-11-21",
     "artist": "Vindata",
     "album": "Through Time And Space...",
@@ -1456,7 +1441,7 @@
   },
   {
     "spotify_album_id": "4he4SQup02hEIQdwhZlZlk",
-    "pick_number": 98,
+    "pick_number": 97,
     "picked_at": "2021-11-28",
     "artist": "KALEO",
     "album": "A/B",
@@ -1471,7 +1456,7 @@
   },
   {
     "spotify_album_id": "0J43YxxLFPZxIrCd12LRuN",
-    "pick_number": 99,
+    "pick_number": 98,
     "picked_at": "2021-12-05",
     "artist": "Fatboy Slim",
     "album": "You've Come a Long Way Baby",
@@ -1486,7 +1471,7 @@
   },
   {
     "spotify_album_id": "6Lq1lrCfkpxKa4jCo5gKWr",
-    "pick_number": 100,
+    "pick_number": 99,
     "picked_at": "2021-12-12",
     "artist": "Madeon",
     "album": "Good Faith",
@@ -1501,7 +1486,7 @@
   },
   {
     "spotify_album_id": "58n9RgidWA0gk6pyJVRIP7",
-    "pick_number": 101,
+    "pick_number": 100,
     "picked_at": "2021-12-19",
     "artist": "Mako Road",
     "album": "The Green Superintendent",
@@ -1516,7 +1501,7 @@
   },
   {
     "spotify_album_id": "21R2CiMVZH2MY514Sq2DIG",
-    "pick_number": 102,
+    "pick_number": 101,
     "picked_at": "2021-12-26",
     "artist": "Louis The Child",
     "album": "Kids At Play- EP",
@@ -1531,7 +1516,7 @@
   },
   {
     "spotify_album_id": "4EAehCii5lZgeewct1LA5p",
-    "pick_number": 103,
+    "pick_number": 102,
     "picked_at": "2022-01-02",
     "artist": "RÜFÜS DU SOL",
     "album": "Bloom",
@@ -1546,7 +1531,7 @@
   },
   {
     "spotify_album_id": "1xpGyKyV26uPstk1Elgp9Q",
-    "pick_number": 104,
+    "pick_number": 103,
     "picked_at": "2022-01-09",
     "artist": "Weezer",
     "album": "Weezer",
@@ -1561,7 +1546,7 @@
   },
   {
     "spotify_album_id": "2xgXGSuafeN1Cdz0fPbd5Y",
-    "pick_number": 105,
+    "pick_number": 104,
     "picked_at": "2022-01-16",
     "artist": "Dave Matthews",
     "album": "Live At Luther College",
@@ -1576,7 +1561,7 @@
   },
   {
     "spotify_album_id": "3nqWLBgWSa25weLtdpTyY7",
-    "pick_number": 106,
+    "pick_number": 105,
     "picked_at": "2022-01-23",
     "artist": "Nathaniel Rateliff & The Night Sweats",
     "album": "Nathaniel Rateliff & The Night Sweats (Deluxe Edition)",
@@ -1591,7 +1576,7 @@
   },
   {
     "spotify_album_id": "0ETFjACtuP2ADo6LFhL6HN",
-    "pick_number": 107,
+    "pick_number": 106,
     "picked_at": "2022-01-30",
     "artist": "The Beatles",
     "album": "Abbey Road (Remastered)",
@@ -1606,7 +1591,7 @@
   },
   {
     "spotify_album_id": "3DrgM5X3yX1JP1liNLAOHI",
-    "pick_number": 108,
+    "pick_number": 107,
     "picked_at": "2022-02-06",
     "artist": "Arcade Fire",
     "album": "The Suburbs",
@@ -1621,7 +1606,7 @@
   },
   {
     "spotify_album_id": "2UvJlbWPpItxxSrlQGrXAt",
-    "pick_number": 109,
+    "pick_number": 108,
     "picked_at": "2022-02-13",
     "artist": "Healy",
     "album": "Subluxe",
@@ -1636,7 +1621,7 @@
   },
   {
     "spotify_album_id": "3wOMqxNHgkga91RBC7BaZU",
-    "pick_number": 110,
+    "pick_number": 109,
     "picked_at": "2022-02-20",
     "artist": "Doja Cat",
     "album": "Amala (Deluxe Version)",
@@ -1651,7 +1636,7 @@
   },
   {
     "spotify_album_id": "1bupWi00723vxZoS7MX9NU",
-    "pick_number": 111,
+    "pick_number": 110,
     "picked_at": "2022-02-27",
     "artist": "The Weeknd",
     "album": "Dawn FM",
@@ -1666,7 +1651,7 @@
   },
   {
     "spotify_album_id": "7D2NdGvBHIavgLhmcwhluK",
-    "pick_number": 112,
+    "pick_number": 111,
     "picked_at": "2022-03-06",
     "artist": "Kanye West",
     "album": "Yeezus",
@@ -1681,7 +1666,7 @@
   },
   {
     "spotify_album_id": "6ZOXiVL8rmk2ATHJiFJhiD",
-    "pick_number": 113,
+    "pick_number": 112,
     "picked_at": "2022-03-13",
     "artist": "Wiz Khalifa",
     "album": "Rolling Papers",
@@ -1696,7 +1681,7 @@
   },
   {
     "spotify_album_id": "6xduu32sm4aidoLhaxYkUA",
-    "pick_number": 114,
+    "pick_number": 113,
     "picked_at": "2022-03-20",
     "artist": "Peach Pit",
     "album": "Being So Normal",
@@ -1711,7 +1696,7 @@
   },
   {
     "spotify_album_id": "0bOEKxKa00RPU5OscdYdC5",
-    "pick_number": 115,
+    "pick_number": 114,
     "picked_at": "2022-03-27",
     "artist": "Wiz Khalifa",
     "album": "Kush & Orange Juice",
@@ -1726,7 +1711,7 @@
   },
   {
     "spotify_album_id": "1crhG7YecAj6ZN0AAYMYsb",
-    "pick_number": 116,
+    "pick_number": 115,
     "picked_at": "2022-04-03",
     "artist": "Saba",
     "album": "CARE FOR ME",
@@ -1741,7 +1726,7 @@
   },
   {
     "spotify_album_id": "7Et3bSTLLqdABO1qCxUplS",
-    "pick_number": 117,
+    "pick_number": 116,
     "picked_at": "2022-04-10",
     "artist": "ScHoolboy Q",
     "album": "Oxymoron (Deluxe)",
@@ -1756,7 +1741,7 @@
   },
   {
     "spotify_album_id": "4sSXylKcBB3p47VfrBJlfK",
-    "pick_number": 118,
+    "pick_number": 117,
     "picked_at": "2022-04-17",
     "artist": "Maren Morris",
     "album": "HERO (Deluxe Edition)",
@@ -1771,7 +1756,7 @@
   },
   {
     "spotify_album_id": "2lO9yuuIDgBpSJzxTh3ai8",
-    "pick_number": 119,
+    "pick_number": 118,
     "picked_at": "2022-04-24",
     "artist": "D'Angelo",
     "album": "Voodoo",
@@ -1786,7 +1771,7 @@
   },
   {
     "spotify_album_id": "6JF49ixyHmOgS0Rsda2k42",
-    "pick_number": 120,
+    "pick_number": 119,
     "picked_at": "2022-05-01",
     "artist": "Isaiah Rashad",
     "album": "Cilvia Demo",
@@ -1801,7 +1786,7 @@
   },
   {
     "spotify_album_id": "0jJ7mMkCkTe7p9EJgSRxgi",
-    "pick_number": 121,
+    "pick_number": 120,
     "picked_at": "2022-05-08",
     "artist": "FKJ",
     "album": "French Kiwi Juice",
@@ -1816,7 +1801,7 @@
   },
   {
     "spotify_album_id": "4EP7addiwSV0EiJ9rN34E2",
-    "pick_number": 122,
+    "pick_number": 121,
     "picked_at": "2022-05-15",
     "artist": "Pasadena",
     "album": "Sick and Tired",
@@ -1831,7 +1816,7 @@
   },
   {
     "spotify_album_id": "5lnQLEUiVDkLbFJHXHQu9m",
-    "pick_number": 123,
+    "pick_number": 122,
     "picked_at": "2022-05-22",
     "artist": "Foo Fighters",
     "album": "Wasting Light",
@@ -1846,7 +1831,7 @@
   },
   {
     "spotify_album_id": "0jZFu2tihRJ65iYAo0oOtP",
-    "pick_number": 124,
+    "pick_number": 123,
     "picked_at": "2022-05-29",
     "artist": "John Mayer",
     "album": "The Search for Everything",
@@ -1861,7 +1846,7 @@
   },
   {
     "spotify_album_id": "7Bnxhw5mnPxrKbrNpnEDJv",
-    "pick_number": 125,
+    "pick_number": 124,
     "picked_at": "2022-06-05",
     "artist": "Sticky Fingers",
     "album": "LEKKERBOY",
@@ -1876,7 +1861,7 @@
   },
   {
     "spotify_album_id": "1w71axmi9UJfsKCdEqGdNm",
-    "pick_number": 126,
+    "pick_number": 125,
     "picked_at": "2022-06-12",
     "artist": "Chronixx",
     "album": "Chronology",
@@ -1891,7 +1876,7 @@
   },
   {
     "spotify_album_id": "748dZDqSZy6aPXKcI9H80u",
-    "pick_number": 127,
+    "pick_number": 126,
     "picked_at": "2022-06-19",
     "artist": "Kendrick Lamar",
     "album": "good kid, m.A.A.d city (Deluxe)",
@@ -1906,7 +1891,7 @@
   },
   {
     "spotify_album_id": "4eLPsYPBmXABThSJ821sqY",
-    "pick_number": 128,
+    "pick_number": 127,
     "picked_at": "2022-06-26",
     "artist": "Kendrick Lamar",
     "album": "DAMN.",
@@ -1921,7 +1906,7 @@
   },
   {
     "spotify_album_id": "69CmkikTHkGKdkrUZTtyWl",
-    "pick_number": 129,
+    "pick_number": 128,
     "picked_at": "2022-07-03",
     "artist": "JAY-Z",
     "album": "The Blueprint (Explicit Version)",
@@ -1936,7 +1921,7 @@
   },
   {
     "spotify_album_id": "08XFx1OZMZnRCh0JrKTIgT",
-    "pick_number": 130,
+    "pick_number": 129,
     "picked_at": "2022-07-10",
     "artist": "Zac Brown Band",
     "album": "The Foundation",
@@ -1951,7 +1936,7 @@
   },
   {
     "spotify_album_id": "1s8rmXFgIuXVpUach3s2V7",
-    "pick_number": 131,
+    "pick_number": 130,
     "picked_at": "2022-07-17",
     "artist": "Zac Brown Band",
     "album": "Uncaged",
@@ -1966,7 +1951,7 @@
   },
   {
     "spotify_album_id": "2nkto6YNI4rUYTLqEwWJ3o",
-    "pick_number": 132,
+    "pick_number": 131,
     "picked_at": "2022-07-24",
     "artist": "Tyler, The Creator",
     "album": "Flower Boy",
@@ -1981,7 +1966,7 @@
   },
   {
     "spotify_album_id": "3Tt1mdezAOx4vjcOovItbV",
-    "pick_number": 133,
+    "pick_number": 132,
     "picked_at": "2022-07-31",
     "artist": "Jack Johnson",
     "album": "On and On",
@@ -1996,7 +1981,7 @@
   },
   {
     "spotify_album_id": "3UoOO8m0oxxvUHXUKf3qcZ",
-    "pick_number": 134,
+    "pick_number": 133,
     "picked_at": "2022-08-07",
     "artist": "Paramore",
     "album": "Riot!",
@@ -2011,7 +1996,7 @@
   },
   {
     "spotify_album_id": "5YgaRDfpuLueyi5hqncqLt",
-    "pick_number": 135,
+    "pick_number": 134,
     "picked_at": "2022-08-14",
     "artist": "Dead & Company",
     "album": "Live at Folsom Field, Boulder, CO, 7/14/18",
@@ -2026,7 +2011,7 @@
   },
   {
     "spotify_album_id": "4mvxoogQn8p84Wz17zTHnJ",
-    "pick_number": 136,
+    "pick_number": 135,
     "picked_at": "2022-08-21",
     "artist": "Daniel Caesar",
     "album": "CASE STUDY 01",
@@ -2041,7 +2026,7 @@
   },
   {
     "spotify_album_id": "5nX3zwIAgHttSudEHLTsAW",
-    "pick_number": 137,
+    "pick_number": 136,
     "picked_at": "2022-08-28",
     "artist": "Surfaces",
     "album": "Where the Light Is",
@@ -2056,7 +2041,7 @@
   },
   {
     "spotify_album_id": "6hs55qjerNNOi4ZT5bOhxV",
-    "pick_number": 138,
+    "pick_number": 137,
     "picked_at": "2022-09-04",
     "artist": "Florence + the Machine",
     "album": "Lungs",
@@ -2071,7 +2056,7 @@
   },
   {
     "spotify_album_id": "2Y9IRtehByVkegoD7TcLfi",
-    "pick_number": 139,
+    "pick_number": 138,
     "picked_at": "2022-09-11",
     "artist": "Red Hot Chili Peppers",
     "album": "Californication",
@@ -2086,7 +2071,7 @@
   },
   {
     "spotify_album_id": "0UMMIkurRUmkruZ3KGBLtG",
-    "pick_number": 140,
+    "pick_number": 139,
     "picked_at": "2022-09-18",
     "artist": "J. Cole",
     "album": "2014 Forest Hills Drive",
@@ -2101,7 +2086,7 @@
   },
   {
     "spotify_album_id": "0xVucRYJf5luWLekMGYh3i",
-    "pick_number": 141,
+    "pick_number": 140,
     "picked_at": "2022-09-25",
     "artist": "ODESZA",
     "album": "The Last Goodbye",
@@ -2116,7 +2101,7 @@
   },
   {
     "spotify_album_id": "0r6KIOwZvmsEd457nUJWbt",
-    "pick_number": 142,
+    "pick_number": 141,
     "picked_at": "2022-10-02",
     "artist": "Hailey Whitters",
     "album": "The Dream: Living The Dream (Deluxe)",
@@ -2131,7 +2116,7 @@
   },
   {
     "spotify_album_id": "5WupqgR68HfuHt3BMJtgun",
-    "pick_number": 143,
+    "pick_number": 142,
     "picked_at": "2022-10-09",
     "artist": "Elton John",
     "album": "Goodbye Yellow Brick Road (Remastered)",
@@ -2146,7 +2131,7 @@
   },
   {
     "spotify_album_id": "1AL5oXZRtTc8PyhcTwg4xQ",
-    "pick_number": 144,
+    "pick_number": 143,
     "picked_at": "2022-10-16",
     "artist": "Stevie Ray Vaughan",
     "album": "Texas Flood (Legacy Edition)",
@@ -2161,7 +2146,7 @@
   },
   {
     "spotify_album_id": "2OkEsqGTfu8PWRrNHzfr0m",
-    "pick_number": 145,
+    "pick_number": 144,
     "picked_at": "2022-10-23",
     "artist": "Coldplay",
     "album": "Live 2012",
@@ -2176,7 +2161,7 @@
   },
   {
     "spotify_album_id": "151w1FgRZfnKZA9FEcg9Z3",
-    "pick_number": 146,
+    "pick_number": 145,
     "picked_at": "2022-10-30",
     "artist": "Taylor Swift",
     "album": "Midnights",
@@ -2191,7 +2176,7 @@
   },
   {
     "spotify_album_id": "7KtyUeiJidoZO0ybxBXw0Q",
-    "pick_number": 147,
+    "pick_number": 146,
     "picked_at": "2022-11-06",
     "artist": "Denzel Curry",
     "album": "Melt My Eyez See Your Future",
@@ -2206,7 +2191,7 @@
   },
   {
     "spotify_album_id": "4JTOxuvM2jcSqAvEZtZsOO",
-    "pick_number": 148,
+    "pick_number": 147,
     "picked_at": "2022-11-13",
     "artist": "Migos",
     "album": "Culture",
@@ -2221,7 +2206,7 @@
   },
   {
     "spotify_album_id": "6s84u2TUpR3wdUv4NgKA2j",
-    "pick_number": 149,
+    "pick_number": 148,
     "picked_at": "2022-11-20",
     "artist": "Olivia Rodrigo",
     "album": "SOUR",
@@ -2236,7 +2221,7 @@
   },
   {
     "spotify_album_id": "0HO9NtwyP7ZqB1jZ70MJL6",
-    "pick_number": 150,
+    "pick_number": 149,
     "picked_at": "2022-11-27",
     "artist": "Tove Lo",
     "album": "Dirt Femme",
@@ -2251,7 +2236,7 @@
   },
   {
     "spotify_album_id": "5kDmlA2g9Y1YCbNo2Ufxlz",
-    "pick_number": 151,
+    "pick_number": 150,
     "picked_at": "2022-12-04",
     "artist": "Sabrina Carpenter",
     "album": "emails i can't send",
@@ -2266,7 +2251,7 @@
   },
   {
     "spotify_album_id": "1bt6q2SruMsBtcerNVtpZB",
-    "pick_number": 152,
+    "pick_number": 151,
     "picked_at": "2022-12-11",
     "artist": "Fleetwood Mac",
     "album": "Rumours",
@@ -2281,7 +2266,7 @@
   },
   {
     "spotify_album_id": "5WndWfzGwCkHzAbQXVkg2V",
-    "pick_number": 153,
+    "pick_number": 152,
     "picked_at": "2022-12-18",
     "artist": "Aretha Franklin",
     "album": "I Never Loved a Man the Way I Love You",
@@ -2296,7 +2281,7 @@
   },
   {
     "spotify_album_id": "07w0rG5TETcyihsEIZR3qG",
-    "pick_number": 154,
+    "pick_number": 153,
     "picked_at": "2022-12-25",
     "artist": "SZA",
     "album": "SOS",
@@ -2311,7 +2296,7 @@
   },
   {
     "spotify_album_id": "2MWDzkDsRqaJcWdktGXhG5",
-    "pick_number": 155,
+    "pick_number": 154,
     "picked_at": "2023-01-01",
     "artist": "Yumi Zouma",
     "album": "Present Tense",
@@ -2326,7 +2311,7 @@
   },
   {
     "spotify_album_id": "34GiVp9W9v6GjsWLkBp0HS",
-    "pick_number": 156,
+    "pick_number": 155,
     "picked_at": "2023-01-08",
     "artist": "The Dip",
     "album": "The Dip",
@@ -2341,7 +2326,7 @@
   },
   {
     "spotify_album_id": "3Qb7S3knciFXwKBpDCT9uV",
-    "pick_number": 157,
+    "pick_number": 156,
     "picked_at": "2023-01-15",
     "artist": "WILLOW",
     "album": "<COPINGMECHANISM>",
@@ -2356,7 +2341,7 @@
   },
   {
     "spotify_album_id": "78bpIziExqiI9qztvNFlQu",
-    "pick_number": 158,
+    "pick_number": 157,
     "picked_at": "2023-01-22",
     "artist": "Arctic Monkeys",
     "album": "AM",
@@ -2371,7 +2356,7 @@
   },
   {
     "spotify_album_id": "6xxUsZyckaV0shjOJ0cVpf",
-    "pick_number": 159,
+    "pick_number": 158,
     "picked_at": "2023-01-29",
     "artist": "Blue Öyster Cult",
     "album": "Blue Oyster Cult",
@@ -2386,7 +2371,7 @@
   },
   {
     "spotify_album_id": "5hNhX0yQcd76ThunCFcggK",
-    "pick_number": 160,
+    "pick_number": 159,
     "picked_at": "2023-02-05",
     "artist": "The Brook & The Bluff",
     "album": "First Place",
@@ -2401,7 +2386,7 @@
   },
   {
     "spotify_album_id": "2cWBwpqMsDJC1ZUwz813lo",
-    "pick_number": 161,
+    "pick_number": 160,
     "picked_at": "2023-02-12",
     "artist": "Eminem",
     "album": "The Eminem Show",
@@ -2416,7 +2401,7 @@
   },
   {
     "spotify_album_id": "5vkqYmiPBYLaalcmjujWxK",
-    "pick_number": 162,
+    "pick_number": 161,
     "picked_at": "2023-02-19",
     "artist": "Radiohead",
     "album": "In Rainbows",
@@ -2431,7 +2416,7 @@
   },
   {
     "spotify_album_id": "18JrBX1QkpnUSJF3oxX6RX",
-    "pick_number": 163,
+    "pick_number": 162,
     "picked_at": "2023-02-26",
     "artist": "GoldLink",
     "album": "At What Cost",
@@ -2446,7 +2431,7 @@
   },
   {
     "spotify_album_id": "6J84szYCnMfzEcvIcfWMFL",
-    "pick_number": 164,
+    "pick_number": 163,
     "picked_at": "2023-03-05",
     "artist": "Bruno Mars",
     "album": "Doo-Wops & Hooligans",
@@ -2461,7 +2446,7 @@
   },
   {
     "spotify_album_id": "05SuSxEPuEJI1RnwTcOCRg",
-    "pick_number": 165,
+    "pick_number": 164,
     "picked_at": "2023-03-12",
     "artist": "Rebelution",
     "album": "Count Me In",
@@ -2476,7 +2461,7 @@
   },
   {
     "spotify_album_id": "4LH4d3cOWNNsVw41Gqt2kv",
-    "pick_number": 166,
+    "pick_number": 165,
     "picked_at": "2023-03-19",
     "artist": "Pink Floyd",
     "album": "The Dark Side of the Moon",
@@ -2491,7 +2476,7 @@
   },
   {
     "spotify_album_id": "4O0noIPlmEkVFvyj7TOKpA",
-    "pick_number": 167,
+    "pick_number": 166,
     "picked_at": "2023-03-26",
     "artist": "Fred again..",
     "album": "Actual Life 3 (January 1 - September 9 2022)",
@@ -2506,7 +2491,7 @@
   },
   {
     "spotify_album_id": "0Azn8xMcCmR8gSoRvOtXVX",
-    "pick_number": 168,
+    "pick_number": 167,
     "picked_at": "2023-04-02",
     "artist": "FKJ",
     "album": "Ylang Ylang EP",
@@ -2521,7 +2506,7 @@
   },
   {
     "spotify_album_id": "6bUsvxMAuR8NXG2ujCU4yi",
-    "pick_number": 169,
+    "pick_number": 168,
     "picked_at": "2023-04-09",
     "artist": "Chance the Rapper",
     "album": "10 Day",
@@ -2536,7 +2521,7 @@
   },
   {
     "spotify_album_id": "6tjhlC2cAY4VtP92VKyqnD",
-    "pick_number": 170,
+    "pick_number": 169,
     "picked_at": "2023-04-16",
     "artist": "Paul McCartney",
     "album": "Band On The Run (Archive Collection)",
@@ -2551,7 +2536,7 @@
   },
   {
     "spotify_album_id": "2FgwL1GHWKTbuHzAIjEeFa",
-    "pick_number": 171,
+    "pick_number": 170,
     "picked_at": "2023-04-23",
     "artist": "MIKA",
     "album": "Life In Cartoon Motion",
@@ -2566,7 +2551,7 @@
   },
   {
     "spotify_album_id": "2QLp07RO6anZHmtcKTEvSC",
-    "pick_number": 172,
+    "pick_number": 171,
     "picked_at": "2023-04-30",
     "artist": "Boston",
     "album": "Boston",
@@ -2581,7 +2566,7 @@
   },
   {
     "spotify_album_id": "5NH94cATqx5fjBE794xZLy",
-    "pick_number": 173,
+    "pick_number": 172,
     "picked_at": "2023-05-07",
     "artist": "JAY-Z",
     "album": "Collision Course (Deluxe Version)",
@@ -2596,7 +2581,7 @@
   },
   {
     "spotify_album_id": "2ANVost0y2y52ema1E9xAZ",
-    "pick_number": 174,
+    "pick_number": 173,
     "picked_at": "2023-05-14",
     "artist": "Michael Jackson",
     "album": "Thriller",
@@ -2611,7 +2596,7 @@
   },
   {
     "spotify_album_id": "0H1uMfDHoCjhYah5jyc33W",
-    "pick_number": 175,
+    "pick_number": 174,
     "picked_at": "2023-05-21",
     "artist": "Dominic Fike",
     "album": "What Could Possibly Go Wrong",
@@ -2626,7 +2611,7 @@
   },
   {
     "spotify_album_id": "70SO4lxUQN7Rt1bg3JCIaS",
-    "pick_number": 176,
+    "pick_number": 175,
     "picked_at": "2023-05-28",
     "artist": "Surfaces",
     "album": "Pacifico (Deluxe)",
@@ -2641,7 +2626,7 @@
   },
   {
     "spotify_album_id": "08eM9GRdr5BCCHNqS3Wwud",
-    "pick_number": 177,
+    "pick_number": 176,
     "picked_at": "2023-06-04",
     "artist": "Kid Cudi",
     "album": "Man On The Moon II: The Legend Of Mr. Rager",
@@ -2656,7 +2641,7 @@
   },
   {
     "spotify_album_id": "19DGbjQW4oJmS1TLmr7OH3",
-    "pick_number": 178,
+    "pick_number": 177,
     "picked_at": "2023-06-11",
     "artist": "Bailey Zimmerman",
     "album": "Religiously. The Album.",
@@ -2671,7 +2656,7 @@
   },
   {
     "spotify_album_id": "68vxyJpFnFb5j5dPFTMLxk",
-    "pick_number": 179,
+    "pick_number": 178,
     "picked_at": "2023-06-18",
     "artist": "The Beths",
     "album": "Expert In A Dying Field",
@@ -2686,7 +2671,7 @@
   },
   {
     "spotify_album_id": "50ZenUP4O2Q5eCy2NRNvuz",
-    "pick_number": 180,
+    "pick_number": 179,
     "picked_at": "2023-06-25",
     "artist": "Noah Kahan",
     "album": "Stick Season",
@@ -2701,7 +2686,7 @@
   },
   {
     "spotify_album_id": "11SyFtaoqm0nlnGcesf6Ov",
-    "pick_number": 181,
+    "pick_number": 180,
     "picked_at": "2023-07-02",
     "artist": "The Brook & The Bluff",
     "album": "The Brook & The Bluff",
@@ -2716,7 +2701,7 @@
   },
   {
     "spotify_album_id": "4hDok0OAJd57SGIT8xuWJH",
-    "pick_number": 182,
+    "pick_number": 181,
     "picked_at": "2023-07-09",
     "artist": "Taylor Swift",
     "album": "Fearless (Taylor's Version)",
@@ -2731,7 +2716,7 @@
   },
   {
     "spotify_album_id": "2AYyw0FbE1GXlNHnx2Gj4a",
-    "pick_number": 183,
+    "pick_number": 182,
     "picked_at": "2023-07-16",
     "artist": "Pharrell Williams",
     "album": "In My Mind",
@@ -2746,7 +2731,7 @@
   },
   {
     "spotify_album_id": "1xn54DMo2qIqBuMqHtUsFd",
-    "pick_number": 184,
+    "pick_number": 183,
     "picked_at": "2023-07-23",
     "artist": "Ed Sheeran",
     "album": "x (Deluxe Edition)",
@@ -2761,7 +2746,7 @@
   },
   {
     "spotify_album_id": "378XG6oO0TWcsGuxeQy2Os",
-    "pick_number": 185,
+    "pick_number": 184,
     "picked_at": "2023-07-30",
     "artist": "Elvis Crespo",
     "album": "Suavemente",
@@ -2776,7 +2761,7 @@
   },
   {
     "spotify_album_id": "0qC7OBo3dCONK0fgHbySdU",
-    "pick_number": 186,
+    "pick_number": 185,
     "picked_at": "2023-08-06",
     "artist": "Bob Moses",
     "album": "The Silence in Between",
@@ -2791,7 +2776,7 @@
   },
   {
     "spotify_album_id": "3pGrDkS6o6zIxCLDROBBpC",
-    "pick_number": 187,
+    "pick_number": 186,
     "picked_at": "2023-08-13",
     "artist": "DOMi & JD BECK",
     "album": "NOT TiGHT",
@@ -2806,7 +2791,7 @@
   },
   {
     "spotify_album_id": "3yHOaiXecTJVUdn7mApZ48",
-    "pick_number": 188,
+    "pick_number": 187,
     "picked_at": "2023-08-20",
     "artist": "John Mayer",
     "album": "Room For Squares",
@@ -2821,7 +2806,7 @@
   },
   {
     "spotify_album_id": "4LaRYkT4oy47wEuQgkLBul",
-    "pick_number": 189,
+    "pick_number": 188,
     "picked_at": "2023-08-27",
     "artist": "Rage Against The Machine",
     "album": "Rage Against The Machine",
@@ -2836,7 +2821,7 @@
   },
   {
     "spotify_album_id": "5qf3r31KB5dW7XroCdkjIQ",
-    "pick_number": 190,
+    "pick_number": 189,
     "picked_at": "2023-09-03",
     "artist": "The South Hill Experiment",
     "album": "MOONSHOTS",
@@ -2851,7 +2836,7 @@
   },
   {
     "spotify_album_id": "6Oi9ZlpYv0Uv7xrsFJXjzZ",
-    "pick_number": 191,
+    "pick_number": 190,
     "picked_at": "2023-09-10",
     "artist": "O.A.R.",
     "album": "The Wanderer",
@@ -2866,7 +2851,7 @@
   },
   {
     "spotify_album_id": "7xV2TzoaVc0ycW7fwBwAml",
-    "pick_number": 192,
+    "pick_number": 191,
     "picked_at": "2023-09-17",
     "artist": "Harry Styles",
     "album": "Fine Line",
@@ -2881,7 +2866,7 @@
   },
   {
     "spotify_album_id": "21KIagsx1ZvYcv0sVkEAWv",
-    "pick_number": 193,
+    "pick_number": 192,
     "picked_at": "2023-09-24",
     "artist": "Leon Bridges",
     "album": "Coming Home (Deluxe)",
@@ -2896,7 +2881,7 @@
   },
   {
     "spotify_album_id": "2oI6gtIXrvNiL2VEMmj5kY",
-    "pick_number": 194,
+    "pick_number": 193,
     "picked_at": "2023-10-01",
     "artist": "JID",
     "album": "DiCaprio 2",
@@ -2911,7 +2896,7 @@
   },
   {
     "spotify_album_id": "6PbnGueEO6LGodPfvNldYf",
-    "pick_number": 195,
+    "pick_number": 194,
     "picked_at": "2023-10-08",
     "artist": "Zach Bryan",
     "album": "Zach Bryan",
@@ -2926,7 +2911,7 @@
   },
   {
     "spotify_album_id": "5rFRfDq52l2l5RtS5kxA9A",
-    "pick_number": 196,
+    "pick_number": 195,
     "picked_at": "2023-10-15",
     "artist": "Janis Joplin",
     "album": "I Got Dem Ol' Kozmic Blues Again Mama!",
@@ -2941,7 +2926,7 @@
   },
   {
     "spotify_album_id": "41GuZcammIkupMPKH2OJ6I",
-    "pick_number": 197,
+    "pick_number": 196,
     "picked_at": "2023-10-22",
     "artist": "Travis Scott",
     "album": "ASTROWORLD",
@@ -2956,7 +2941,7 @@
   },
   {
     "spotify_album_id": "6gnNCtxxhwKTYGIDVqeMUd",
-    "pick_number": 198,
+    "pick_number": 197,
     "picked_at": "2023-10-29",
     "artist": "Peter Cat Recording Co.",
     "album": "Bismillah",
@@ -2971,7 +2956,7 @@
   },
   {
     "spotify_album_id": "2tATnHgurXCAt2fwXmfN3A",
-    "pick_number": 199,
+    "pick_number": 198,
     "picked_at": "2023-11-05",
     "artist": "Katy Perry",
     "album": "Teenage Dream",
@@ -2986,7 +2971,7 @@
   },
   {
     "spotify_album_id": "3eZd2XbhLyPcgbgcsLTZh3",
-    "pick_number": 200,
+    "pick_number": 199,
     "picked_at": "2023-11-12",
     "artist": "Nickelback",
     "album": "All the Right Reasons",
@@ -3001,7 +2986,7 @@
   },
   {
     "spotify_album_id": "68RLd2WLF5xNLiPYD5jvLJ",
-    "pick_number": 201,
+    "pick_number": 200,
     "picked_at": "2023-11-19",
     "artist": "Wes Montgomery",
     "album": "Full House (Live / Keepnews Collection)",
@@ -3016,7 +3001,7 @@
   },
   {
     "spotify_album_id": "4jPnb0rdxEawWMlO8RfzJP",
-    "pick_number": 202,
+    "pick_number": 201,
     "picked_at": "2023-11-26",
     "artist": "Wilderado",
     "album": "Wilderado",
@@ -3031,7 +3016,7 @@
   },
   {
     "spotify_album_id": "69ZfxFGJ3jF8KHxQUqDw5E",
-    "pick_number": 203,
+    "pick_number": 202,
     "picked_at": "2023-12-03",
     "artist": "Stromae",
     "album": "Mix Para La Farra De Fin De Año",
@@ -3046,7 +3031,7 @@
   },
   {
     "spotify_album_id": "1Khdy0BbHmXrL4C2SLTKGi",
-    "pick_number": 204,
+    "pick_number": 203,
     "picked_at": "2023-12-10",
     "artist": "Mac Miller",
     "album": "Watching Movies with the Sound Off (10th Anniversary)",
@@ -3061,7 +3046,7 @@
   },
   {
     "spotify_album_id": "0FHpjWlnUmplF5ciL84Wpa",
-    "pick_number": 205,
+    "pick_number": 204,
     "picked_at": "2023-12-17",
     "artist": "Michael Bublé",
     "album": "Christmas (Deluxe 10th Anniversary Edition)",
@@ -3076,7 +3061,7 @@
   },
   {
     "spotify_album_id": "5krQbJqzCCOxCGOQ3W8Tr6",
-    "pick_number": 206,
+    "pick_number": 205,
     "picked_at": "2023-12-24",
     "artist": "Rainbow Kitten Surprise",
     "album": "Seven + Mary",
@@ -3091,7 +3076,7 @@
   },
   {
     "spotify_album_id": "42WVQWuf1teDysXiOupIZt",
-    "pick_number": 207,
+    "pick_number": 206,
     "picked_at": "2023-12-31",
     "artist": "Travis Scott",
     "album": "Birds In The Trap Sing McKnight",
@@ -3106,7 +3091,7 @@
   },
   {
     "spotify_album_id": "35LcGAeeMwVeIJrDpB3Gkz",
-    "pick_number": 208,
+    "pick_number": 207,
     "picked_at": "2024-01-07",
     "artist": "Tyler Childers",
     "album": "Purgatory",
@@ -3121,7 +3106,7 @@
   },
   {
     "spotify_album_id": "7yQtjAjhtNi76KRu05XWFS",
-    "pick_number": 209,
+    "pick_number": 208,
     "picked_at": "2024-01-14",
     "artist": "Jeff Buckley",
     "album": "Grace",
@@ -3136,7 +3121,7 @@
   },
   {
     "spotify_album_id": "32MaUU5gk5Ig0nHC9G5VNX",
-    "pick_number": 210,
+    "pick_number": 209,
     "picked_at": "2024-01-21",
     "artist": "Khruangbin",
     "album": "The Universe Smiles Upon You",
@@ -3151,7 +3136,7 @@
   },
   {
     "spotify_album_id": "387xCAELz6eeONugqwsY3x",
-    "pick_number": 211,
+    "pick_number": 210,
     "picked_at": "2024-01-28",
     "artist": "Hayden James",
     "album": "Between Us",
@@ -3166,7 +3151,7 @@
   },
   {
     "spotify_album_id": "3RqO05jxT9YYgNtMdQmo8Z",
-    "pick_number": 212,
+    "pick_number": 211,
     "picked_at": "2024-02-04",
     "artist": "Reneé Rapp",
     "album": "Snow Angel",
@@ -3181,7 +3166,7 @@
   },
   {
     "spotify_album_id": "06q6BDUpP6OS8Xnx3YC2M0",
-    "pick_number": 213,
+    "pick_number": 212,
     "picked_at": "2024-02-11",
     "artist": "Lainey Wilson",
     "album": "Bell Bottom Country",
@@ -3196,7 +3181,7 @@
   },
   {
     "spotify_album_id": "60561o2TNguqnXD5ZurDup",
-    "pick_number": 214,
+    "pick_number": 213,
     "picked_at": "2024-02-18",
     "artist": "Counting Crows",
     "album": "This Desert Life",
@@ -3211,7 +3196,7 @@
   },
   {
     "spotify_album_id": "1rccj3MT8J26ZXlOVQLEuN",
-    "pick_number": 215,
+    "pick_number": 214,
     "picked_at": "2024-02-25",
     "artist": "Tom Misch",
     "album": "Beat Tape 2",
@@ -3226,7 +3211,7 @@
   },
   {
     "spotify_album_id": "18XFe4CPBgVezXkxZP6rTb",
-    "pick_number": 216,
+    "pick_number": 215,
     "picked_at": "2024-03-03",
     "artist": "Fugees",
     "album": "The Score (Expanded Edition)",
@@ -3241,7 +3226,7 @@
   },
   {
     "spotify_album_id": "4X6b6POxbjX9inC7TWQd54",
-    "pick_number": 217,
+    "pick_number": 216,
     "picked_at": "2024-03-10",
     "artist": "Beyoncé",
     "album": "Lemonade",
@@ -3256,7 +3241,7 @@
   },
   {
     "spotify_album_id": "10aiDpdFGyfCFEcqpx6XTq",
-    "pick_number": 218,
+    "pick_number": 217,
     "picked_at": "2024-03-17",
     "artist": "Santana",
     "album": "Supernatural (Remastered)",
@@ -3271,7 +3256,7 @@
   },
   {
     "spotify_album_id": "6WKNoni6aDzCTUN1CtJJ5R",
-    "pick_number": 219,
+    "pick_number": 218,
     "picked_at": "2024-03-24",
     "artist": "Morgan Wallen",
     "album": "If I Know Me",
@@ -3286,7 +3271,7 @@
   },
   {
     "spotify_album_id": "0bCAjiUamIFqKJsekOYuRw",
-    "pick_number": 220,
+    "pick_number": 219,
     "picked_at": "2024-03-31",
     "artist": "Pink Floyd",
     "album": "Wish You Were Here",
@@ -3301,7 +3286,7 @@
   },
   {
     "spotify_album_id": "4iqbFIdGOTzXeDtt9owjQn",
-    "pick_number": 221,
+    "pick_number": 220,
     "picked_at": "2024-04-07",
     "artist": "Future",
     "album": "WE DON'T TRUST YOU",
@@ -3316,7 +3301,7 @@
   },
   {
     "spotify_album_id": "0twx7uqxPQtmtpeURTlZB0",
-    "pick_number": 222,
+    "pick_number": 221,
     "picked_at": "2024-04-14",
     "artist": "Marcus King",
     "album": "El Dorado",
@@ -3331,7 +3316,7 @@
   },
   {
     "spotify_album_id": "3ZJCkMzqe5OzSkYMrCcuAs",
-    "pick_number": 223,
+    "pick_number": 222,
     "picked_at": "2024-04-21",
     "artist": "Jason Mraz",
     "album": "Jason Mraz's Beautiful Mess: Live on Earth",
@@ -3346,7 +3331,7 @@
   },
   {
     "spotify_album_id": "3y6G5El2I6QrJA9BdfAbqA",
-    "pick_number": 224,
+    "pick_number": 223,
     "picked_at": "2024-04-28",
     "artist": "The Chicks",
     "album": "Fly",
@@ -3361,7 +3346,7 @@
   },
   {
     "spotify_album_id": "0EiI8ylL0FmWWpgHVTsZjZ",
-    "pick_number": 225,
+    "pick_number": 224,
     "picked_at": "2024-05-05",
     "artist": "Chappell Roan",
     "album": "The Rise and Fall of a Midwest Princess",
@@ -3376,7 +3361,7 @@
   },
   {
     "spotify_album_id": "2bOwdC37gg057sITTY8Ovj",
-    "pick_number": 226,
+    "pick_number": 225,
     "picked_at": "2024-05-12",
     "artist": "Rainbow Kitten Surprise",
     "album": "Love Hate Music Box",
@@ -3391,7 +3376,7 @@
   },
   {
     "spotify_album_id": "41qVSZezrAYJ8zXZvoyLGA",
-    "pick_number": 227,
+    "pick_number": 226,
     "picked_at": "2024-05-19",
     "artist": "Tedeschi Trucks Band",
     "album": "Made Up Mind",
@@ -3406,7 +3391,7 @@
   },
   {
     "spotify_album_id": "0JV6D9aNy5FbIKYixh5NPo",
-    "pick_number": 228,
+    "pick_number": 227,
     "picked_at": "2024-05-26",
     "artist": "Zac Brown Band",
     "album": "You Get What You Give (Deluxe)",
@@ -3421,7 +3406,7 @@
   },
   {
     "spotify_album_id": "0PMasrHdpaoIRuHuhHp72O",
-    "pick_number": 229,
+    "pick_number": 228,
     "picked_at": "2024-06-02",
     "artist": "Bruce Springsteen",
     "album": "Born In The U.S.A.",
@@ -3436,7 +3421,7 @@
   },
   {
     "spotify_album_id": "5TkaDC4mYSLBvdG6UrIB0v",
-    "pick_number": 230,
+    "pick_number": 229,
     "picked_at": "2024-06-09",
     "artist": "The Marías",
     "album": "CINEMA",
@@ -3451,7 +3436,7 @@
   },
   {
     "spotify_album_id": "0DLvFVIfwt3OHdK9kGeEM3",
-    "pick_number": 231,
+    "pick_number": 230,
     "picked_at": "2024-06-16",
     "artist": "Shaboozey",
     "album": "Where I've Been, Isn't Where I'm Going",
@@ -3466,7 +3451,7 @@
   },
   {
     "spotify_album_id": "0mwf6u9KVhZDCNVyIi6JuU",
-    "pick_number": 232,
+    "pick_number": 231,
     "picked_at": "2024-06-23",
     "artist": "Teyana Taylor",
     "album": "K.T.S.E.",
@@ -3481,7 +3466,7 @@
   },
   {
     "spotify_album_id": "1W04wu2W4OIcuiNc5AMB3y",
-    "pick_number": 233,
+    "pick_number": 232,
     "picked_at": "2024-06-30",
     "artist": "Vampire Weekend",
     "album": "Only God Was Above Us",
@@ -3496,7 +3481,7 @@
   },
   {
     "spotify_album_id": "3nY1adGXhrb5La2iZMpsJE",
-    "pick_number": 234,
+    "pick_number": 233,
     "picked_at": "2024-07-07",
     "artist": "Royel Otis",
     "album": "Bar & Grill",
@@ -3511,7 +3496,7 @@
   },
   {
     "spotify_album_id": "7l80BDHxpZwj8FXImqH8fw",
-    "pick_number": 235,
+    "pick_number": 234,
     "picked_at": "2024-07-14",
     "artist": "Megan Moroney",
     "album": "Am I Okay?",
@@ -3526,7 +3511,7 @@
   },
   {
     "spotify_album_id": "6hPkbAV3ZXpGZBGUvL6jVM",
-    "pick_number": 236,
+    "pick_number": 235,
     "picked_at": "2024-07-21",
     "artist": "Linkin Park",
     "album": "Hybrid Theory (Bonus Edition)",
@@ -3541,7 +3526,7 @@
   },
   {
     "spotify_album_id": "6fCDiY92JVAorr6HrKStRH",
-    "pick_number": 237,
+    "pick_number": 236,
     "picked_at": "2024-07-28",
     "artist": "Christone \"Kingfish\" Ingram",
     "album": "Kingfish",
@@ -3556,7 +3541,7 @@
   },
   {
     "spotify_album_id": "1Mk7Lei0Ra3hawezqmad5V",
-    "pick_number": 238,
+    "pick_number": 237,
     "picked_at": "2024-08-04",
     "artist": "Logic",
     "album": "Under Pressure (Deluxe)",
@@ -3571,7 +3556,7 @@
   },
   {
     "spotify_album_id": "0zhZDmHEtDtok393SbZ3d7",
-    "pick_number": 239,
+    "pick_number": 238,
     "picked_at": "2024-08-11",
     "artist": "Meek Mill",
     "album": "Dreams and Nightmares (Deluxe Edition)",
@@ -3586,7 +3571,7 @@
   },
   {
     "spotify_album_id": "59HvKoeiHwdv7I1oLTki9t",
-    "pick_number": 240,
+    "pick_number": 239,
     "picked_at": "2024-08-18",
     "artist": "Pasadena",
     "album": "Nowhere Fast",
@@ -3601,7 +3586,7 @@
   },
   {
     "spotify_album_id": "2lIZef4lzdvZkiiCzvPKj7",
-    "pick_number": 241,
+    "pick_number": 240,
     "picked_at": "2024-08-25",
     "artist": "Charli xcx",
     "album": "BRAT",
@@ -3616,7 +3601,7 @@
   },
   {
     "spotify_album_id": "1PQDjdBpHPikAodJqjzm6a",
-    "pick_number": 242,
+    "pick_number": 241,
     "picked_at": "2024-09-01",
     "artist": "Death Grips",
     "album": "The Money Store",
@@ -3631,7 +3616,7 @@
   },
   {
     "spotify_album_id": "1lXY618HWkwYKJWBRYR4MK",
-    "pick_number": 243,
+    "pick_number": 242,
     "picked_at": "2024-09-08",
     "artist": "Drake",
     "album": "More Life",
@@ -3646,7 +3631,7 @@
   },
   {
     "spotify_album_id": "1bwbZJ6khPJyVpOaqgKsoZ",
-    "pick_number": 244,
+    "pick_number": 243,
     "picked_at": "2024-09-15",
     "artist": "Metro Boomin",
     "album": "METRO BOOMIN PRESENTS SPIDER-MAN: ACROSS THE SPIDER-VERSE (SOUNDTRACK FROM AND INSPIRED BY THE MOTION PICTURE)",
@@ -3661,7 +3646,7 @@
   },
   {
     "spotify_album_id": "4B4Elma4nNDUyl6D5PvQkj",
-    "pick_number": 245,
+    "pick_number": 244,
     "picked_at": "2024-09-22",
     "artist": "Sabrina Carpenter",
     "album": "Short n' Sweet",
@@ -3676,7 +3661,7 @@
   },
   {
     "spotify_album_id": "08jeayZieCHTosu0K5tzf9",
-    "pick_number": 246,
+    "pick_number": 245,
     "picked_at": "2024-09-29",
     "artist": "Ezra Collective",
     "album": "Dance, No One's Watching",
@@ -3691,7 +3676,7 @@
   },
   {
     "spotify_album_id": "3DQueEd1Ft9PHWgovDzPKh",
-    "pick_number": 247,
+    "pick_number": 246,
     "picked_at": "2024-10-06",
     "artist": "Fred again..",
     "album": "ten days",
@@ -3706,7 +3691,7 @@
   },
   {
     "spotify_album_id": "5ll74bqtkcXlKE7wwkMq4g",
-    "pick_number": 248,
+    "pick_number": 247,
     "picked_at": "2024-10-13",
     "artist": "Kanye West",
     "album": "Late Registration",
@@ -3721,7 +3706,7 @@
   },
   {
     "spotify_album_id": "3uFgYgCEvCSACjB8XHl3hb",
-    "pick_number": 249,
+    "pick_number": 248,
     "picked_at": "2024-10-20",
     "artist": "CASIOPEA",
     "album": "CASIOPEA",
@@ -3736,7 +3721,7 @@
   },
   {
     "spotify_album_id": "5mDOkRhGrjRpOXuS8Kszy8",
-    "pick_number": 250,
+    "pick_number": 249,
     "picked_at": "2024-10-27",
     "artist": "Clubhouse",
     "album": "what a view!",
@@ -3751,7 +3736,7 @@
   },
   {
     "spotify_album_id": "19ObsGobUuBr11M6ysFMug",
-    "pick_number": 251,
+    "pick_number": 250,
     "picked_at": "2024-11-03",
     "artist": "Green Day",
     "album": "American Idiot (20th Anniversary Deluxe Edition)",
@@ -3766,7 +3751,7 @@
   },
   {
     "spotify_album_id": "1Pl9ZGXwayXPg5qRVpYo74",
-    "pick_number": 252,
+    "pick_number": 251,
     "picked_at": "2024-11-10",
     "artist": "Tiësto",
     "album": "DRIVE",
@@ -3781,7 +3766,7 @@
   },
   {
     "spotify_album_id": "0vVekV45lOaVKs6RZQQNob",
-    "pick_number": 253,
+    "pick_number": 252,
     "picked_at": "2024-11-17",
     "artist": "Neutral Milk Hotel",
     "album": "In the Aeroplane Over the Sea",
@@ -3796,7 +3781,7 @@
   },
   {
     "spotify_album_id": "1G0VH29venEyfSgCtMddwo",
-    "pick_number": 254,
+    "pick_number": 253,
     "picked_at": "2024-11-24",
     "artist": "Ferdous",
     "album": "Cool Party",
@@ -3811,7 +3796,7 @@
   },
   {
     "spotify_album_id": "2Z11cXWEa2qqYQBGkJrCga",
-    "pick_number": 255,
+    "pick_number": 254,
     "picked_at": "2024-12-01",
     "artist": "John Coltrane",
     "album": "Blue Train",
@@ -3826,7 +3811,7 @@
   },
   {
     "spotify_album_id": "6i1PjUE3crhNw0LzCOUR5B",
-    "pick_number": 256,
+    "pick_number": 255,
     "picked_at": "2024-12-08",
     "artist": "Jet",
     "album": "Get Born",
@@ -3841,7 +3826,7 @@
   },
   {
     "spotify_album_id": "0hvT3yIEysuuvkK73vgdcW",
-    "pick_number": 257,
+    "pick_number": 256,
     "picked_at": "2024-12-15",
     "artist": "Kendrick Lamar",
     "album": "GNX",
@@ -3856,7 +3841,7 @@
   },
   {
     "spotify_album_id": "5BJQU2MNtNDciOP4bWVhGc",
-    "pick_number": 258,
+    "pick_number": 257,
     "picked_at": "2024-12-22",
     "artist": "Ashes To Amber",
     "album": "THE AMERICAN JUNKIE",
@@ -3871,7 +3856,7 @@
   },
   {
     "spotify_album_id": "7aJuG4TFXa2hmE4z1yxc3n",
-    "pick_number": 259,
+    "pick_number": 258,
     "picked_at": "2024-12-29",
     "artist": "Billie Eilish",
     "album": "HIT ME HARD AND SOFT",
@@ -3886,7 +3871,7 @@
   },
   {
     "spotify_album_id": "0y8Hs51sdWyGd2gPJFOMX8",
-    "pick_number": 260,
+    "pick_number": 259,
     "picked_at": "2025-01-05",
     "artist": "Reneé Rapp",
     "album": "Everything To Everyone (Deluxe)",
@@ -3901,7 +3886,7 @@
   },
   {
     "spotify_album_id": "2noRn2Aes5aoNVsU6iWThc",
-    "pick_number": 261,
+    "pick_number": 260,
     "picked_at": "2025-01-12",
     "artist": "Daft Punk",
     "album": "Discovery",
@@ -3916,7 +3901,7 @@
   },
   {
     "spotify_album_id": "2ANFIaCb53iam0MBkFFoxY",
-    "pick_number": 262,
+    "pick_number": 261,
     "picked_at": "2025-01-19",
     "artist": "Mac Miller",
     "album": "Balloonerism",
@@ -3931,7 +3916,7 @@
   },
   {
     "spotify_album_id": "0sOeI7pbAmIc8aDFyvkBUW",
-    "pick_number": 263,
+    "pick_number": 262,
     "picked_at": "2025-01-26",
     "artist": "Chris Stapleton",
     "album": "Starting Over",
@@ -3946,7 +3931,7 @@
   },
   {
     "spotify_album_id": "0Q5XBpCYFgUWiG9DUWyAmJ",
-    "pick_number": 264,
+    "pick_number": 263,
     "picked_at": "2025-02-02",
     "artist": "Twenty One Pilots",
     "album": "Scaled And Icy",
@@ -3961,7 +3946,7 @@
   },
   {
     "spotify_album_id": "2gKQvajkEEaDtkqJ8FJ4uw",
-    "pick_number": 265,
+    "pick_number": 264,
     "picked_at": "2025-02-09",
     "artist": "Fetty Wap",
     "album": "Fetty Wap (Deluxe)",
@@ -3976,7 +3961,7 @@
   },
   {
     "spotify_album_id": "3UedVnaIbI3SRuMLClWiJ3",
-    "pick_number": 266,
+    "pick_number": 265,
     "picked_at": "2025-02-16",
     "artist": "Rawayana",
     "album": "¿Quién trae las cornetas?",
@@ -3991,7 +3976,7 @@
   },
   {
     "spotify_album_id": "1XZtc4PTKO10b6B3vjwbWs",
-    "pick_number": 267,
+    "pick_number": 266,
     "picked_at": "2025-02-23",
     "artist": "BigXthaPlug",
     "album": "TAKE CARE (DELUXE)",
@@ -4006,7 +3991,7 @@
   },
   {
     "spotify_album_id": "00QEcKEqSmwP8odEMImIuz",
-    "pick_number": 268,
+    "pick_number": 267,
     "picked_at": "2025-03-02",
     "artist": "James Morrison",
     "album": "Undiscovered",
@@ -4021,7 +4006,7 @@
   },
   {
     "spotify_album_id": "4FCoFSNIFhK36holxHWCnc",
-    "pick_number": 269,
+    "pick_number": 268,
     "picked_at": "2025-03-09",
     "artist": "Alice In Chains",
     "album": "Jar Of Flies",
@@ -4036,7 +4021,7 @@
   },
   {
     "spotify_album_id": "3TSMSh5dai7WEnEGOoMXBZ",
-    "pick_number": 270,
+    "pick_number": 269,
     "picked_at": "2025-03-16",
     "artist": "The Backseat Lovers",
     "album": "When We Were Friends",
@@ -4051,7 +4036,7 @@
   },
   {
     "spotify_album_id": "1ep4OEfNOhvcY85STfEtKy",
-    "pick_number": 271,
+    "pick_number": 270,
     "picked_at": "2025-03-23",
     "artist": "Jack Harlow",
     "album": "Jackman.",
@@ -4066,7 +4051,7 @@
   },
   {
     "spotify_album_id": "6mUdeDZCsExyJLMdAfDuwh",
-    "pick_number": 272,
+    "pick_number": 271,
     "picked_at": "2025-03-30",
     "artist": "AC/DC",
     "album": "Back In Black",
@@ -4081,7 +4066,7 @@
   },
   {
     "spotify_album_id": "7HD93jBvVa80rJxyxDRwUL",
-    "pick_number": 273,
+    "pick_number": 272,
     "picked_at": "2025-04-06",
     "artist": "Babe Rainbow",
     "album": "The Babe Rainbow",
@@ -4096,7 +4081,7 @@
   },
   {
     "spotify_album_id": "5K79FLRUCSysQnVESLcTdb",
-    "pick_number": 274,
+    "pick_number": 273,
     "picked_at": "2025-04-13",
     "artist": "Bad Bunny",
     "album": "DeBÍ TiRAR MáS FOToS",
@@ -4111,7 +4096,7 @@
   },
   {
     "spotify_album_id": "64QcWKPhmceNB4ULPq1l1o",
-    "pick_number": 275,
+    "pick_number": 274,
     "picked_at": "2025-04-20",
     "artist": "Sara Bareilles",
     "album": "Between The Lines: Sara Bareilles Live At The Fillmore",
@@ -4126,7 +4111,7 @@
   },
   {
     "spotify_album_id": "1VV4tdUYIjRlhKxu1gMw4d",
-    "pick_number": 276,
+    "pick_number": 275,
     "picked_at": "2025-04-27",
     "artist": "Steve Winwood",
     "album": "Back In The High Life",
@@ -4141,7 +4126,7 @@
   },
   {
     "spotify_album_id": "5o0FlSEgJSc3pk5oLoMQbH",
-    "pick_number": 277,
+    "pick_number": 276,
     "picked_at": "2025-05-04",
     "artist": "Yung Bae",
     "album": "Bae",
@@ -4156,7 +4141,7 @@
   },
   {
     "spotify_album_id": "1tGCh000DGwoAq9CLxN56U",
-    "pick_number": 278,
+    "pick_number": 277,
     "picked_at": "2025-05-11",
     "artist": "ERNEST",
     "album": "Cadillac Sessions",
@@ -4171,7 +4156,7 @@
   },
   {
     "spotify_album_id": "4guAwaniEAEQSW0NCpo4gm",
-    "pick_number": 279,
+    "pick_number": 278,
     "picked_at": "2025-05-18",
     "artist": "Journey",
     "album": "Escape (2022 Remaster)",
@@ -4186,7 +4171,7 @@
   },
   {
     "spotify_album_id": "2TjodugH6rA5ZHPsWVErmw",
-    "pick_number": 280,
+    "pick_number": 279,
     "picked_at": "2025-05-25",
     "artist": "Traffic",
     "album": "John Barleycorn Must Die",
@@ -4201,7 +4186,7 @@
   },
   {
     "spotify_album_id": "6DlSUW5gmq6Byc3osKDJ2p",
-    "pick_number": 281,
+    "pick_number": 280,
     "picked_at": "2025-06-01",
     "artist": "Steely Dan",
     "album": "Can't Buy A Thrill",
@@ -4216,7 +4201,7 @@
   },
   {
     "spotify_album_id": "2UpcMYFkeMbmD1LiBjvYn9",
-    "pick_number": 282,
+    "pick_number": 281,
     "picked_at": "2025-06-08",
     "artist": "The Paper Kites",
     "album": "At the Roadhouse",
@@ -4231,7 +4216,7 @@
   },
   {
     "spotify_album_id": "28yHV3Gdg30AiB8h8em1eW",
-    "pick_number": 283,
+    "pick_number": 282,
     "picked_at": "2025-06-15",
     "artist": "Guns N' Roses",
     "album": "Appetite For Destruction",
@@ -4246,7 +4231,7 @@
   },
   {
     "spotify_album_id": "6t4h3psMfV6uQ49CmZklhn",
-    "pick_number": 284,
+    "pick_number": 283,
     "picked_at": "2025-06-22",
     "artist": "Various Artists",
     "album": "Another Day, Another Time: Celebrating the Music of 'Inside Llewyn Davis'",
@@ -4261,7 +4246,7 @@
   },
   {
     "spotify_album_id": "0FgZKfoU2Br5sHOfvZKTI9",
-    "pick_number": 285,
+    "pick_number": 284,
     "picked_at": "2025-06-29",
     "artist": "Kanye West",
     "album": "JESUS IS KING",
@@ -4276,7 +4261,7 @@
   },
   {
     "spotify_album_id": "21bY25auKXAQaZK6oZSe1J",
-    "pick_number": 286,
+    "pick_number": 285,
     "picked_at": "2025-07-06",
     "artist": "JOBA",
     "album": "Russell Boring",
@@ -4291,7 +4276,7 @@
   },
   {
     "spotify_album_id": "1gFQ6dGFvpDsHmnr4bPbTV",
-    "pick_number": 287,
+    "pick_number": 286,
     "picked_at": "2025-07-13",
     "artist": "Russ",
     "album": "W!LD",
@@ -4306,7 +4291,7 @@
   },
   {
     "spotify_album_id": "26678sDHO3Xg8g6q3Fo1WX",
-    "pick_number": 288,
+    "pick_number": 287,
     "picked_at": "2025-07-20",
     "artist": "SiR",
     "album": "HEAVY",
@@ -4321,7 +4306,7 @@
   },
   {
     "spotify_album_id": "5vD5M5VW62LL78Ko8x0CVZ",
-    "pick_number": 289,
+    "pick_number": 288,
     "picked_at": "2025-07-27",
     "artist": "Justin Bieber",
     "album": "SWAG",
@@ -4336,7 +4321,7 @@
   },
   {
     "spotify_album_id": "7AwrgenNcTAJlJF3pKL0Qr",
-    "pick_number": 290,
+    "pick_number": 289,
     "picked_at": "2025-08-03",
     "artist": "Blxst",
     "album": "No Love Lost (Deluxe)",
@@ -4351,7 +4336,7 @@
   },
   {
     "spotify_album_id": "2cPJrMHIIBkKarl6nxi11P",
-    "pick_number": 291,
+    "pick_number": 290,
     "picked_at": "2025-08-10",
     "artist": "Bailey Zimmerman",
     "album": "Different Night Same Rodeo",
@@ -4366,7 +4351,7 @@
   },
   {
     "spotify_album_id": "3uTpTaMOynCYKV5AtgeO2U",
-    "pick_number": 292,
+    "pick_number": 291,
     "picked_at": "2025-08-17",
     "artist": "Lola Young",
     "album": "This Wasn't Meant For You Anyway",
@@ -4381,7 +4366,7 @@
   },
   {
     "spotify_album_id": "47zSQLQWjPLmiEbCpOOEJa",
-    "pick_number": 293,
+    "pick_number": 292,
     "picked_at": "2025-08-24",
     "artist": "SHINee",
     "album": "Odd - The 4th Album",
@@ -4396,7 +4381,7 @@
   },
   {
     "spotify_album_id": "3UrUNyumXYfBUynAvcyMC9",
-    "pick_number": 294,
+    "pick_number": 293,
     "picked_at": "2025-08-31",
     "artist": "Rattlesnake Milk",
     "album": "Rattlesnake Milk",
@@ -4411,7 +4396,7 @@
   },
   {
     "spotify_album_id": "4tJPWT4r4FSKwy784Qs1Fq",
-    "pick_number": 295,
+    "pick_number": 294,
     "picked_at": "2025-09-07",
     "artist": "The Cars",
     "album": "The Cars",
@@ -4426,7 +4411,7 @@
   },
   {
     "spotify_album_id": "6xv4soedEKLMLzSpgWYuzf",
-    "pick_number": 296,
+    "pick_number": 295,
     "picked_at": "2025-09-14",
     "artist": "Matisyahu",
     "album": "Youth",
@@ -4441,7 +4426,7 @@
   },
   {
     "spotify_album_id": "6wrS2IS6GGyJHVbIZaVLjq",
-    "pick_number": 297,
+    "pick_number": 296,
     "picked_at": "2025-09-21",
     "artist": "Pilli Bebek",
     "album": "Olsun",
@@ -4456,7 +4441,7 @@
   },
   {
     "spotify_album_id": "2xkZV2Hl1Omi8rk2D7t5lN",
-    "pick_number": 298,
+    "pick_number": 297,
     "picked_at": "2025-09-28",
     "artist": "The Strokes",
     "album": "The New Abnormal",
@@ -4471,7 +4456,7 @@
   },
   {
     "spotify_album_id": "7zyILGPU1W58PNTgEgRNvO",
-    "pick_number": 299,
+    "pick_number": 298,
     "picked_at": "2025-10-05",
     "artist": "Durand Jones & The Indications",
     "album": "Flowers",
@@ -4486,7 +4471,7 @@
   },
   {
     "spotify_album_id": "2l3QxNo4QubBNmVKxLeum0",
-    "pick_number": 300,
+    "pick_number": 299,
     "picked_at": "2025-10-12",
     "artist": "Neil Young",
     "album": "Harvest (2009 Remaster)",
@@ -4501,7 +4486,7 @@
   },
   {
     "spotify_album_id": "5CAT7o1EpDKqLjE1x5tgqU",
-    "pick_number": 301,
+    "pick_number": 300,
     "picked_at": "2025-10-19",
     "artist": "Rufus Wainwright",
     "album": "Poses (Expanded Edition)",
@@ -4516,7 +4501,7 @@
   },
   {
     "spotify_album_id": "0dZaHQ0OJlIyVrEuvnXmS9",
-    "pick_number": 302,
+    "pick_number": 301,
     "picked_at": "2025-10-26",
     "artist": "Jim Croce",
     "album": "You Don't Mess Around With Jim",
@@ -4531,7 +4516,7 @@
   },
   {
     "spotify_album_id": "4TvslVsWkFSkAd0TyclOpz",
-    "pick_number": 303,
+    "pick_number": 302,
     "picked_at": "2025-11-02",
     "artist": "Daniel Caesar",
     "album": "Son Of Spergy",
@@ -4546,7 +4531,7 @@
   },
   {
     "spotify_album_id": "2scB1uhcCI1TSf6b9TCZK3",
-    "pick_number": 304,
+    "pick_number": 303,
     "picked_at": "2025-11-09",
     "artist": "Justin Timberlake",
     "album": "FutureSex/LoveSounds",
@@ -4561,7 +4546,7 @@
   },
   {
     "spotify_album_id": "0eeXb23yMW6EaIgm63xxPC",
-    "pick_number": 305,
+    "pick_number": 304,
     "picked_at": "2025-11-16",
     "artist": "Geese",
     "album": "Getting Killed",
@@ -4576,7 +4561,7 @@
   },
   {
     "spotify_album_id": "7oXDJH6q9NOxB0QyOiG4ko",
-    "pick_number": 306,
+    "pick_number": 305,
     "picked_at": "2025-11-23",
     "artist": "Westside Gunn",
     "album": "HEELS HAVE EYES 2",
@@ -4591,7 +4576,7 @@
   },
   {
     "spotify_album_id": "3Z72KfamjH9Wc5m9mgVqI7",
-    "pick_number": 307,
+    "pick_number": 306,
     "picked_at": "2025-11-30",
     "artist": "Dave Matthews Band",
     "album": "Crash",
@@ -4606,7 +4591,7 @@
   },
   {
     "spotify_album_id": "0fhmJYVhW0e4i33pCLPA5i",
-    "pick_number": 308,
+    "pick_number": 307,
     "picked_at": "2025-12-07",
     "artist": "J. Cole",
     "album": "Cole World: The Sideline Story",
@@ -4621,7 +4606,7 @@
   },
   {
     "spotify_album_id": "2ffVa2UhHUDwMHnr685zJ4",
-    "pick_number": 309,
+    "pick_number": 308,
     "picked_at": "2025-12-14",
     "artist": "Addison Rae",
     "album": "Addison",
@@ -4636,7 +4621,7 @@
   },
   {
     "spotify_album_id": "1vhib5WLHRVdOpRjiTHk15",
-    "pick_number": 310,
+    "pick_number": 309,
     "picked_at": "2025-12-21",
     "artist": "Bob Seger",
     "album": "Stranger In Town",
@@ -4651,7 +4636,7 @@
   },
   {
     "spotify_album_id": "0l8zYqoUeBYg47Gmevq9HZ",
-    "pick_number": 311,
+    "pick_number": 310,
     "picked_at": "2025-12-28",
     "artist": "Olivia Dean",
     "album": "The Art of Loving",
@@ -4666,7 +4651,7 @@
   },
   {
     "spotify_album_id": "5djciKtjqkY9ZQ1OhKICXN",
-    "pick_number": 312,
+    "pick_number": 311,
     "picked_at": "2026-01-04",
     "artist": "Buddy",
     "album": "Harlan & Alondra",
@@ -4681,7 +4666,7 @@
   },
   {
     "spotify_album_id": "6rcYUB0G3fFJrRQSmIHO93",
-    "pick_number": 313,
+    "pick_number": 312,
     "picked_at": "2026-01-11",
     "artist": "BENEE",
     "album": "Ur an Angel I’m Just Particles",
@@ -4696,7 +4681,7 @@
   },
   {
     "spotify_album_id": "77CZUF57sYqgtznUe3OikQ",
-    "pick_number": 314,
+    "pick_number": 313,
     "picked_at": "2026-01-18",
     "artist": "Ninajirachi",
     "album": "I Love My Computer",
@@ -4711,7 +4696,7 @@
   },
   {
     "spotify_album_id": "7G31WimJFKHnf53ZwtKUXn",
-    "pick_number": 315,
+    "pick_number": 314,
     "picked_at": "2026-01-25",
     "artist": "Spacey Jane",
     "album": "If That Makes Sense",
@@ -4726,7 +4711,7 @@
   },
   {
     "spotify_album_id": "4BnCr0behKaGscMMhpiHX7",
-    "pick_number": 316,
+    "pick_number": 315,
     "picked_at": "2026-02-01",
     "artist": "Jessie Murph",
     "album": "That Ain't No Man That's The Devil",
@@ -4741,7 +4726,7 @@
   },
   {
     "spotify_album_id": "7AJPV0L05IyIBid97AvwVD",
-    "pick_number": 317,
+    "pick_number": 316,
     "picked_at": "2026-02-08",
     "artist": "Porter Robinson",
     "album": "Worlds",
@@ -4756,7 +4741,7 @@
   },
   {
     "spotify_album_id": "4ZLVPyXVXeMbnxyhxvsF7m",
-    "pick_number": 318,
+    "pick_number": 317,
     "picked_at": "2026-02-15",
     "artist": "Paul McCartney",
     "album": "Ram",
@@ -4771,7 +4756,7 @@
   },
   {
     "spotify_album_id": "3ibdlhMmbFPMYoWvwHCzI3",
-    "pick_number": 319,
+    "pick_number": 318,
     "picked_at": "2026-02-22",
     "artist": "The Fray",
     "album": "The Fray",
