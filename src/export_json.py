@@ -23,7 +23,7 @@ def export_sheet_to_json(
         spotify_album_id  — 22-char Spotify ID extracted from the URL
         pick_number       — int, 0 if missing/unparseable
         picked_at         — ISO date string (YYYY-MM-DD), '' if missing
-        artist, album, year, artwork_url, spotify_url, picker
+        artist, album, year, artwork_url, spotify_url, apple_music_url, picker
 
     Returns the list of normalized album dicts (also written to output_path).
     """
@@ -75,8 +75,12 @@ def export_sheet_to_json(
             'artist':           row_dict.get('artist', ''),
             'album':            row_dict.get('album', ''),
             'year':             row_dict.get('year', ''),
+            'label':            row_dict.get('label', ''),
+            'genres':           row_dict.get('genres', ''),
+            'total_tracks':     row_dict.get('total_tracks', ''),
             'artwork_url':      row_dict.get('artwork_url', ''),
             'spotify_url':      spotify_url,
+            'apple_music_url':  row_dict.get('apple_music_url', ''),
             'picker':           row_dict.get('picker', ''),
         })
 

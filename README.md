@@ -20,13 +20,58 @@ End-to-end system for a music club: post a Spotify album link in Telegram, it lo
 | Website | React + Vite, Netlify |
 | Data flow | Google Sheets → JSON → GitHub → Netlify |
 
+## System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        TRIGGER                                  │
+│  Telegram Group: "@aotw https://open.spotify.com/album/..."     │
+└─────────────────────────┬───────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                  BACKEND (Railway)                              │
+│                                                                 │
+│  telegram_bot.py  ──►  pipeline.py (7 steps)                   │
+│  (webhook mode)         │                                       │
+│                         ├─ 1. validate URL       validation.py  │
+│                         ├─ 2. dedup check        add_album.py   │
+│                         ├─ 3. Spotify fetch      add_album.py   │
+│                         ├─ 4. validate metadata  validation.py  │
+│                         ├─ 5. Google Sheet append add_album.py  │
+│                         ├─ 6. export Google Sheet as JSON       │
+│                         │                        export_json.py │
+│                         └─ 7. GitHub push        github_push.py │
+└──────────┬──────────────────────────────┬──────────────────────┘
+           │                              │
+           ▼                              ▼
+┌──────────────────┐           ┌──────────────────────┐
+│  Google Sheets   │           │  GitHub Repo          │
+│  (canonical DB)  │           │  (data.json)          │
+│                  │           └──────────┬───────────┘
+│  - All picks     │                      │
+│  - Row formula   │                      │ auto-deploy
+│    =ROW()-1      │                      ▼
+└──────────────────┘           ┌──────────────────────┐
+                               │  Netlify (website)   │
+                               │                      │
+                               │  Picks page          │
+                               │  Analytics page      │
+                               │  About page          │
+                               │                      │
+                               │  reads /data.json    │
+                               └──────────────────────┘
+```
+
+**External APIs:** Spotify (album metadata), Google Sheets API (read/write), GitHub Contents API (file push), Telegram Bot API (webhook).
+
 ## How It Works
 
 1. Someone posts `@aotw https://open.spotify.com/album/...` in the Telegram group
 2. The bot validates the URL and checks for duplicates
 3. Album metadata is fetched from Spotify
 4. A new row is appended to the Google Sheet
-5. The full sheet is exported to `data.json` and pushed to the website GitHub repo
+5. The full sheet is exported as `data.json` and pushed to the website GitHub repo
 6. Netlify detects the commit and redeploys — site updates within ~1 minute
 
 ## Local Development
