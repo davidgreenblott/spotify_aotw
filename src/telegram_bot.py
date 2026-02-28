@@ -10,6 +10,15 @@ logger = setup_logging()
 ALLOWED_CHAT_ID = os.getenv('TELEGRAM_ALLOWED_CHAT_ID')
 BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
+# Maps Telegram username (case-insensitive) → picker initials shown on album cards
+PICKER_MAP = {
+    'steve':   'SS',
+    'd_blott': 'DG',
+    'ross':    'RB',
+    'jack':    'JC',
+    'ben':     'BR',
+}
+
 # Pattern: @aotw <spotify_album_url>
 _TRIGGER_PATTERN = re.compile(
     r'@aotw\s+(https://open\.spotify\.com/album/[^\s]+)',
@@ -42,6 +51,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
+    picker = PICKER_MAP.get((username or '').lower(), '')
+
     try:
         from pipeline import process_album
         result = await process_album(
@@ -49,6 +60,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             sheet_id=os.getenv('GOOGLE_SHEET_ID'),
             sheet_tab=os.getenv('GOOGLE_SHEET_TAB'),
             creds_path=os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON'),
+            picker=picker,
         )
         await update.message.reply_text(result['message'], parse_mode='Markdown')
 
