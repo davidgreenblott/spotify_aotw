@@ -8,7 +8,7 @@ For full architecture and design decisions see `AOTW_Project_Summary_2026_02_23.
 
 ---
 
-## Current State (as of 2026-02-28)
+## Current State (as of 2026-03-06)
 
 All 26 tasks are complete and the system is fully deployed and end-to-end tested.
 
@@ -16,6 +16,19 @@ All 26 tasks are complete and the system is fully deployed and end-to-end tested
 - **Google Sheet** — canonical data store, pick numbers auto-filled by `=ROW()-1`, picker column assigned
 - **GitHub (`aotw-website`)** — `data.json` at `public/`, pushed by bot on every new pick
 - **Netlify** — auto-deploys on every `aotw-website` commit, site live within ~1 min
+
+### Changes made 2026-03-06
+
+- **Non-Spotify album support** — `export_json.py` now includes rows without a Spotify URL if they have artist + album data; `alt_url` column exported and shown on site
+  - Augustus James "The Saint James EP" added as first non-Spotify entry (SoundCloud link, local artwork `/st-james-ep.png`)
+- **Apple Music icon redesign** — replaced generic icon with two beamed eighth notes (D-shaped note heads) on a red background badge, matching the Apple Music app icon
+- **SoundCloud icon** — orange cloud icon shown on cards where `alt_url` is set and no Spotify URL
+- **Telegram bot trigger format changed** — new format: `@aotw <spotify_url> <apple_music_url> [initials]`
+  - `apple_music_url` is now required (submitted manually instead of via Odesli API lookup)
+  - `[initials]` is optional — if omitted, falls back to `PICKER_MAP` username lookup
+  - Odesli API (`_fetch_apple_music_url`) kept as fallback if `apple_music_url` is empty (e.g. calls from non-bot paths)
+  - Bot replies with format hint if `@aotw` detected but message doesn't match the pattern
+- **Sheet maintenance** — re-ran `backfill_pickers.py --force` after sheet updates; 327 albums in `data.json`
 
 ### Changes made 2026-02-28
 

@@ -16,13 +16,21 @@ PICKER_MAP = {
     'd_blott': 'DG',
     'ross':    'RB',
     'jack':    'JC',
-    'ben':     'BR',
+    '@Ninajirachi_Fan':     'BR',
 }
 
-# Pattern: @aotw <spotify_album_url>
+# Full pattern:  @aotw <spotify_url> <apple_music_url> [initials]
 _TRIGGER_PATTERN = re.compile(
-    r'@aotw\s+(https://open\.spotify\.com/album/[^\s]+)',
+    r'@aotw\s+(https://open\.spotify\.com/album/[^\s]+)\s+(https?://[^\s]+)(?:\s+([A-Za-z]{2}))?',
     re.IGNORECASE
+)
+# Partial pattern — catches @aotw with something after it but wrong format
+_PARTIAL_PATTERN = re.compile(r'@aotw\s+\S', re.IGNORECASE)
+
+_FORMAT_HINT = (
+    "Format: `@aotw <spotify_url> <apple_music_url> [initials]`\n"
+    "Example: `@aotw https://open.spotify.com/album/... https://music.apple.com/... DG`\n"
+    "Initials are optional — omit to use your registered username."
 )
 
 
@@ -40,27 +48,32 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     match = _TRIGGER_PATTERN.search(message_text)
     if not match:
-        return  # Not a trigger message — ignore silently
+        if _PARTIAL_PATTERN.search(message_text):
+            await update.message.reply_text(_FORMAT_HINT, parse_mode='Markdown')
+        return
 
-    url = match.group(1)
+    spotify_url = match.group(1)
+    apple_music_url = match.group(2)
+    initials = match.group(3)
 
-    if not is_valid_spotify_album_url(url):
+    if not is_valid_spotify_album_url(spotify_url):
         await update.message.reply_text(
-            "Couldn't add this album (reason: not a valid Spotify album link). "
-            "Please post a Spotify album URL."
+            "Couldn't add this album — not a valid Spotify album link.\n" + _FORMAT_HINT,
+            parse_mode='Markdown',
         )
         return
 
-    picker = PICKER_MAP.get((username or '').lower(), '')
+    picker = initials.upper() if initials else PICKER_MAP.get((username or '').lower(), '')
 
     try:
         from pipeline import process_album
         result = await process_album(
-            url,
+            spotify_url,
             sheet_id=os.getenv('GOOGLE_SHEET_ID'),
             sheet_tab=os.getenv('GOOGLE_SHEET_TAB'),
             creds_path=os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON'),
             picker=picker,
+            apple_music_url=apple_music_url,
         )
         await update.message.reply_text(result['message'], parse_mode='Markdown')
 
