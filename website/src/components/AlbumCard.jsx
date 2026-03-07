@@ -9,21 +9,30 @@ function SpotifyIcon() {
 function AppleMusicIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 0 0-1.762-.66c-.69-.124-1.38-.143-2.07-.143H6.254c-.74 0-1.48.02-2.19.145A4.895 4.895 0 0 0 2.3 1.233a5.083 5.083 0 0 0-1.75 2.95 8.581 8.581 0 0 0-.217 2.057c-.01.718 0 1.435 0 2.153v7.32c0 .718-.01 1.435 0 2.153a8.44 8.44 0 0 0 .217 2.043 5.083 5.083 0 0 0 1.755 2.942 4.906 4.906 0 0 0 1.762.657c.69.123 1.38.142 2.07.142h11.49c.74 0 1.48-.02 2.19-.145a4.896 4.896 0 0 0 1.762-.655 5.081 5.081 0 0 0 1.75-2.95 8.43 8.43 0 0 0 .217-2.043c.01-.718 0-1.435 0-2.153V8.277c0-.718.01-1.435 0-2.153zM12.19 17.82a3.398 3.398 0 1 1 0-6.797 3.398 3.398 0 0 1 0 6.797zm5.167-8.4a1.143 1.143 0 1 1 0-2.286 1.143 1.143 0 0 1 0 2.286zm-5.167 1.956a1.045 1.045 0 1 0 0 2.09 1.045 1.045 0 0 0 0-2.09z" />
+      <path d="M15.2 4.4a1 1 0 0 0-.4 0L9 5.7a1 1 0 0 0-.8 1v7.9a3 3 0 0 0-1-.2c-1.7 0-3 .9-3 2.4S5.5 19 7.1 19c1.9 0 3.1-1.1 3.1-2.7V8l4.9-1.1v5.7a3 3 0 0 0-1-.2c-1.7 0-3 .9-3 2.4S12.4 17 14 17c1.9 0 3.1-1.1 3.1-2.7V5.3a.94.94 0 0 0-.4-.7.96.96 0 0 0-.6-.2z" />
+    </svg>
+  )
+}
+
+function SoundCloudIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M1.5 14.5c0 1.4 1.1 2.5 2.5 2.5h13.5c1.9 0 3.5-1.6 3.5-3.5 0-1.7-1.2-3.1-2.8-3.4.1-.4.1-.7.1-1.1C18.3 7 16.3 5 13.8 5c-1.3 0-2.5.5-3.3 1.4C9.9 5.5 8.8 5 7.5 5 5 5 3 7 3 9.5c0 .3 0 .6.1.9C2.1 11 1.5 12.7 1.5 14.5zm4.2-3.3.8.1V10c0-.7.6-1.2 1.2-1.2s1.2.5 1.2 1.2v4.7H5.7c-.7 0-1.2-.6-1.2-1.2 0-.7.5-1.2 1.2-1.3zm3.8-1.9V15H10v-5.7c0-.4.3-.7.7-.7s.7.3.7.7V15h.6V8.8c0-.4.3-.7.7-.7s.7.3.7.7V15h.6V9.5c0-.4.3-.7.7-.7s.7.3.7.7V15h.3c.7 0 1.2.6 1.2 1.2H9.5V9.3z"/>
     </svg>
   )
 }
 
 export default function AlbumCard({ album }) {
-  const { pick_number, artist, album: title, year, artwork_url, spotify_url, apple_music_url, picker } = album
+  const { pick_number, artist, album: title, year, artwork_url, spotify_url, apple_music_url, alt_url, picker } = album
+  const primaryUrl = spotify_url || alt_url
 
   return (
     <div
       className="album-card"
-      onClick={() => window.open(spotify_url, '_blank', 'noopener,noreferrer')}
+      onClick={() => window.open(primaryUrl, '_blank', 'noopener,noreferrer')}
       role="link"
       tabIndex={0}
-      onKeyDown={e => e.key === 'Enter' && window.open(spotify_url, '_blank', 'noopener,noreferrer')}
+      onKeyDown={e => e.key === 'Enter' && window.open(primaryUrl, '_blank', 'noopener,noreferrer')}
       title={`${artist} — ${title}`}
     >
       <img
@@ -61,6 +70,18 @@ export default function AlbumCard({ album }) {
               onClick={e => e.stopPropagation()}
             >
               <AppleMusicIcon />
+            </a>
+          )}
+          {alt_url && !spotify_url && (
+            <a
+              className="album-card__platform-link album-card__platform-link--soundcloud"
+              href={alt_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open on SoundCloud"
+              onClick={e => e.stopPropagation()}
+            >
+              <SoundCloudIcon />
             </a>
           )}
         </div>

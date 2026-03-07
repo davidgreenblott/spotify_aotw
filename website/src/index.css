@@ -217,7 +217,15 @@ img { display: block; width: 100%; }
 }
 
 .album-card__platform-link--spotify { color: #1db954; }
-.album-card__platform-link--apple   { color: #fc3c44; }
+.album-card__platform-link--apple {
+  background: #fc3c44;
+  color: white;
+  border-radius: 4px;
+  width: 19px;
+  height: 19px;
+  padding: 2px;
+}
+.album-card__platform-link--soundcloud { color: #ff5500; }
 
 /* ── Status messages ──────────────────────────────────────────── */
 .status {

@@ -50,12 +50,16 @@ def export_sheet_to_json(
         for col_name, col_idx in header_map.items():
             row_dict[col_name] = row[col_idx].strip() if col_idx < len(row) else ''
 
-        # A valid Spotify URL is required — rows without one are silently skipped
+        # Rows must have at least artist + album to be included
         spotify_url = row_dict.get('spotify_album_url', '')
+        alternative_url = row_dict.get('alt_url', '')
         album_id = extract_spotify_album_id(spotify_url)
         if not album_id:
-            logger.warning('Skipping row with invalid Spotify URL: %r', spotify_url)
-            continue
+            if not (row_dict.get('artist', '').strip() and row_dict.get('album', '').strip()):
+                logger.warning('Skipping row with invalid Spotify URL: %r', spotify_url)
+                continue
+            spotify_url = ''
+            logger.info('Including non-Spotify album: %r (alt_url: %r)', row_dict.get('album', ''), alternative_url)
 
         # Coerce pick number to int; default to 0 if cell is empty or a formula placeholder
         try:
@@ -81,6 +85,7 @@ def export_sheet_to_json(
             'artwork_url':      row_dict.get('artwork_url', ''),
             'spotify_url':      spotify_url,
             'apple_music_url':  row_dict.get('apple_music_url', ''),
+            'alt_url':          alternative_url,
             'picker':           row_dict.get('picker', ''),
         })
 
