@@ -8,14 +8,38 @@ For full architecture and design decisions see `AOTW_Project_Summary_2026_02_23.
 
 ---
 
-## Current State (as of 2026-02-28)
+## Current State (as of 2026-03-06)
 
 All 26 tasks are complete and the system is fully deployed and end-to-end tested.
 
 - **Railway** — Telegram bot running on webhooks (`run_webhook()`), no polling conflicts
-- **Google Sheet** — canonical data store, pick numbers auto-filled by `=ROW()-1`
-- **GitHub (`aotw-website`)** — `data.json` at repo root, pushed by bot on every new pick
+- **Google Sheet** — canonical data store, pick numbers auto-filled by `=ROW()-1`, picker column assigned
+- **GitHub (`aotw-website`)** — `data.json` at `public/`, pushed by bot on every new pick
 - **Netlify** — auto-deploys on every `aotw-website` commit, site live within ~1 min
+
+### Changes made 2026-03-06
+
+- **Non-Spotify album support** — `export_json.py` now includes rows without a Spotify URL if they have artist + album data; `alt_url` column exported and shown on site
+  - Augustus James "The Saint James EP" added as first non-Spotify entry (SoundCloud link, local artwork `/st-james-ep.png`)
+- **Apple Music icon redesign** — replaced generic icon with two beamed eighth notes (D-shaped note heads) on a red background badge, matching the Apple Music app icon
+- **SoundCloud icon** — orange cloud icon shown on cards where `alt_url` is set and no Spotify URL
+- **Telegram bot trigger format changed** — new format: `@aotw <spotify_url> <apple_music_url> [initials]`
+  - `apple_music_url` is now required (submitted manually instead of via Odesli API lookup)
+  - `[initials]` is optional — if omitted, falls back to `PICKER_MAP` username lookup
+  - Odesli API (`_fetch_apple_music_url`) kept as fallback if `apple_music_url` is empty (e.g. calls from non-bot paths)
+  - Bot replies with format hint if `@aotw` detected but message doesn't match the pattern
+- **Sheet maintenance** — re-ran `backfill_pickers.py --force` after sheet updates; 327 albums in `data.json`
+
+### Changes made 2026-02-28
+
+- **Mobile grid fix** — album grid was rendering as a single column on phones; changed to `repeat(2, 1fr)` on ≤768px
+- **Picker initials** — each album card now shows who picked it (e.g. `DG`) in the bottom-right corner
+  - `PICKER_MAP` in `telegram_bot.py` maps Telegram username → initials: `{"steve":"SS","d_blott":"DG","ross":"RB","jack":"JC","ben":"BR"}`
+  - `pipeline.py` accepts `picker=''` and attaches it to `album_info` before sheet append
+  - `add_album.py` `build_row_from_header` writes the `picker` column
+  - `src/backfill_pickers.py` — one-off script to assign initials to all existing rows cyclically; supports `--dry-run` and `--force`
+  - Cycle rule: first loop SS→DG→RB (Jack skipped), then SS→DG→RB→JC repeating
+- **Sheet data integrity** — audited picks, removed one incorrect entry, added placeholders for missing picks to keep cycle accurate; re-ran backfill with `--force` after each change
 
 ---
 
@@ -23,10 +47,11 @@ All 26 tasks are complete and the system is fully deployed and end-to-end tested
 
 ```
 src/
-  add_album.py        # Core: Spotify fetch, sheet append, dedup
+  add_album.py        # Core: Spotify fetch, sheet append, dedup; build_row_from_header writes picker
+  backfill_pickers.py # One-off: assign picker initials cyclically to all sheet rows (--force to overwrite)
   add_album_gui.py    # PyQt5 GUI (legacy, still works)
   logging_config.py   # setup_logging() → structured stdout
-  telegram_bot.py     # Bot: webhook mode, whitelist, @aotw trigger
+  telegram_bot.py     # Bot: webhook mode, whitelist, @aotw trigger; PICKER_MAP for username→initials
   validation.py       # is_valid_spotify_album_url, extract_spotify_album_id, validate_album_metadata
   pipeline.py         # Async orchestrator: validate → dedup → fetch → append → push
   retry_utils.py      # @retry_with_backoff decorator (exponential backoff)
@@ -38,7 +63,8 @@ tests/
   test_dedup.py           # Dedup logic (mocked sheet)
   test_telegram_bot.py    # Async bot handler (mocked)
   test_validation.py      # URL + metadata validation
-  test_pipeline.py        # 14 async tests (all steps + partial failure)
+  test_pipeline.py        # 15 async tests (all steps + partial failure + picker forwarding)
+  test_backfill_pickers.py # 4 tests for cycle assignment logic
   test_retry_utils.py     # 10 tests (backoff timing, exception filtering)
   test_export_json.py     # 12 tests (normalisation, date formats, invalid row skipping)
   test_github_push.py     # 11 tests (create/update, base64, error handling)
@@ -51,7 +77,7 @@ website/
     hooks/useAlbums.js           # useAlbums() → {albums, loading, error}; useAlbumMetadata()
     utils/filterSort.js          # filterAndSort(), processAlbums(), groupByYear(), uniqueDecades()
     components/
-      AlbumCard.jsx              # Card: artwork, Spotify link, pick # badge
+      AlbumCard.jsx              # Card: artwork, Spotify link, pick # badge, picker initials (bottom-right)
       AlbumGrid.jsx              # Grouped by pick year (default) or flat (when sorted)
       SearchBar.jsx              # Controlled search input
       FilterBar.jsx              # Decade + Sort By dropdowns
@@ -129,3 +155,5 @@ mamba run -n spotify-env pytest tests/ --ignore=tests/test_add_album.py -v --asy
 - **Partial failure safe** — if GitHub push fails after sheet write, returns `success: True, partial_failure: True`
 - **Flat grid when sorted** — year grouping only shown on default (unsorted) picks page
 - **Netlify cache** — 5-min `must-revalidate` for `data.json`, 1-year immutable for hashed assets
+- **Picker cycle** — first 3 picks SS→DG→RB (Jack skipped first round), then SS→DG→RB→JC repeating; placeholders in sheet preserve cycle for missing/non-Spotify picks
+- **Two-repo workflow** — website code lives in `spotify_aotw/website/` (source of truth) and `aotw-website/` (Netlify deploy target); changes must be copied and pushed to both

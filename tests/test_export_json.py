@@ -132,20 +132,36 @@ def test_empty_date_becomes_empty_string():
 # Tests: invalid / missing data
 # ---------------------------------------------------------------------------
 
-def test_skips_row_with_no_spotify_url():
+def test_includes_row_with_no_spotify_url_if_has_artist_and_album():
+    """Rows without a Spotify URL are included when artist + album are present (e.g. SoundCloud picks)."""
     rows = [
         ['1', '1/5/2025', 'Good', 'Album', '2020', URL_A, '', ''],
         ['2', '1/12/2025', 'Bad',  'Album', '2020', '',    '', ''],
+    ]
+    albums, _ = run_export(rows)
+    assert len(albums) == 2
+    assert albums[0]['spotify_album_id'] == ALBUM_ID_A
+    assert albums[1]['spotify_url'] == ''
+
+
+def test_skips_row_with_no_spotify_url_and_no_artist_or_album():
+    """Rows with no Spotify URL AND no artist/album are silently skipped."""
+    rows = [
+        ['1', '1/5/2025', 'Good', 'Album', '2020', URL_A, '', ''],
+        ['2', '1/12/2025', '',    '',      '2020', '',    '', ''],
     ]
     albums, _ = run_export(rows)
     assert len(albums) == 1
     assert albums[0]['spotify_album_id'] == ALBUM_ID_A
 
 
-def test_skips_row_with_invalid_spotify_url():
+def test_skips_row_with_invalid_spotify_url_but_includes_if_has_artist_album():
+    """A non-Spotify URL with valid artist+album is included with empty spotify fields."""
     rows = [['1', '1/5/2025', 'A', 'B', '2020', 'https://example.com/notspotify', '', '']]
     albums, _ = run_export(rows)
-    assert len(albums) == 0
+    assert len(albums) == 1
+    assert albums[0]['spotify_url'] == ''
+    assert albums[0]['artist'] == 'A'
 
 
 def test_empty_sheet_returns_empty_list():

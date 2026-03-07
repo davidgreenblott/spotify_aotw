@@ -38,7 +38,7 @@ def _fetch_apple_music_url(spotify_url: str) -> str:
         return ''
 
 
-async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None, picker='') -> Dict:
+async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None, picker='', apple_music_url='') -> Dict:
     """Main pipeline orchestrator.
 
     Returns: {'success': bool, 'message': str, 'data': dict}
@@ -103,14 +103,15 @@ async def process_album(url: str, sheet_id=None, sheet_tab=None, creds_path=None
             'message': f"❌ {validation_error}",
         }
 
-    # Step 5.5: Look up Apple Music URL via Odesli (non-blocking — failure is acceptable)
-    apple_music_url = _fetch_apple_music_url(url)
+    # Step 5.5: Use caller-supplied Apple Music URL; fall back to Odesli only if not provided
+    if not apple_music_url:
+        apple_music_url = _fetch_apple_music_url(url)
+        if apple_music_url:
+            logger.info('Apple Music URL found via Odesli for %s', album_id)
+        else:
+            logger.info('No Apple Music URL for %s', album_id)
     album_info['apple_music_url'] = apple_music_url
     album_info['picker'] = picker
-    if apple_music_url:
-        logger.info('Apple Music URL found for %s', album_id)
-    else:
-        logger.info('No Apple Music URL found for %s', album_id)
 
     # Step 6: Append to Google Sheet (pick # written as =ROW()-N formula)
     try:
