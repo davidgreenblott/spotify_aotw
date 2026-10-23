@@ -120,4 +120,4 @@ pytest tests/ --ignore=tests/test_add_album.py --asyncio-mode=auto
 
 Credentials for local dev:
 - `spotify_credentials.json` — Spotify client ID/secret (gitignored)
-- `aotw-488201-8465cf54c9d9.json` — Google service account key (gitignored)
+- `aotw-488201-bec5fcaf75ea.json` — Google service account key (gitignored)

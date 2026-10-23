@@ -7,7 +7,7 @@ aotw_master_list.xlsx
 # Spotify API Credentials
 spotify_credentials.json
 *service_account*.json
-aotw-488201-8465cf54c9d9.json
+aotw-488201-bec5fcaf75ea.json
 
 # Local dev data (real data copied in for local testing)
 website/public/data.json

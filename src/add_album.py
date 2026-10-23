@@ -119,7 +119,7 @@ def get_spotify_api():
 
 def get_default_creds_path():
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    default_name = 'aotw-488201-8465cf54c9d9.json'
+    default_name = 'aotw-488201-bec5fcaf75ea.json'
     candidate = os.path.join(repo_root, default_name)
     return candidate if os.path.isfile(candidate) else None
 

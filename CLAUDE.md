@@ -98,5 +98,5 @@ cd ../aotw-website && git add -p && git commit -m "..." && git pull --rebase && 
 ## External Credentials (gitignored)
 
 - `spotify_credentials.json` — Spotify API credentials (local dev fallback)
-- `aotw-488201-8465cf54c9d9.json` — Google service account key (local dev fallback)
+- `aotw-488201-bec5fcaf75ea.json` — Google service account key (local dev fallback)
 - See `.env.example` for the full list of environment variables required
